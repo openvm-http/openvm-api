@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package openvm.v1;
+
+option go_package = "github.com/openvm-http/openvm-api/gen/openvm/v1;v1";
+
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string greeting = 1;
+}
+
+service ApiService {
+  rpc Greet(GreetRequest) returns (GreetResponse) {}
+}
