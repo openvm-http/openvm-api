@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"errors"
-	openvmv1c "github.com/openvm-http/openvm-api/gen/openvm/v1/v1connect"
-	openvmserv "github.com/openvm-http/openvm-api/internal/service/openvm"
+	openvmv1Connect "github.com/openvm-http/openvm-api/gen/openvm/v1/v1connect"
+	openvmServer "github.com/openvm-http/openvm-api/internal/service/openvm"
 	"log"
 	"net/http"
 	"os"
@@ -18,7 +18,7 @@ import (
 
 func main() {
 	api := http.NewServeMux()
-	api.Handle(openvmv1c.NewApiServiceHandler(&openvmserv.GreetServer{}))
+	api.Handle(openvmv1Connect.NewApiServiceHandler(&openvmServer.ApiServer{}))
 	mux := http.NewServeMux()
 	mux.Handle("/api/", http.StripPrefix("/api", api))
 

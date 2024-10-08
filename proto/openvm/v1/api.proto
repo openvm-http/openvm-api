@@ -4,14 +4,366 @@ package openvm.v1;
 
 option go_package = "github.com/openvm-http/openvm-api/gen/openvm/v1;v1";
 
-message GreetRequest {
-  string name = 1;
+message ErrDetail {
+  // 错误信息
+  string message = 1;
+  // 错误所属模块
+  enum ErrDetailModule {
+    // 未知
+    UNKNOWN = 0;
+    // VIX相关
+    VIX = 1;
+    // VMX解析相关
+    VMX = 2;
+    // 文件系统相关
+    FILESYSTEM = 3;
+    // API服务相关
+    SERVICE = 4;
+  }
+  ErrDetailModule module = 2;
 }
 
-message GreetResponse {
-  string greeting = 1;
+message GenericRequest {
+  // VMX文件路径
+  string vmxFilePath = 1;
+}
+
+message GenericResponse {
+  // 目前空响应
+}
+
+message RegisterVMRequest {
+  // VMX文件路径
+  string vmxFilePath = 1;
+}
+
+message UnregisterVMRequest {
+  // VMX文件路径
+  string vmxFilePath = 1;
+}
+
+message CloneVMRequest {
+  // 源虚拟机VMX文件路径
+  string vmxFilePathSrc = 1;
+  // 目的虚拟机VMX文件路径
+  string vmxFilePathDest = 2;
+  // 操作类别
+  enum CloneVMRequestType {
+    // 链接克隆
+    LINKED = 0;
+    // 完整克隆
+    FULL = 1;
+  }
+  CloneVMRequestType type = 3;
+}
+
+message DeleteVMRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 操作类别
+  enum DeleteVMRequestType {
+    // 删除所有文件
+    DELETE_DISK_FILES = 0;
+    // 不删除虚拟硬盘文件
+    DELETE_KEEP_FILES = 1;
+  }
+  DeleteVMRequestType type = 2;
+}
+
+message PowerOffVMRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 操作类别
+  enum PowerOffVMRequestType {
+    // 硬关机
+    NORMAL = 0;
+    // 调用VMTools软关机
+    FROM_GUEST = 1;
+  }
+  PowerOffVMRequestType type = 2;
+}
+
+message PowerOnVMRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 操作类别
+  enum PowerOnVMRequestType {
+    // 无界面启动
+    NORMAL = 0;
+    // 带界面启动
+    LAUNCH_GUI = 1;
+  }
+  PowerOnVMRequestType type = 2;
+}
+
+message ResetVMRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 操作类别
+  enum ResetVMRequestType {
+    // 硬重置
+    NORMAL = 0;
+    // 调用VMTools软重置
+    FROM_GUEST = 1;
+  }
+  ResetVMRequestType type = 2;
+}
+
+message ReadVMVariableRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要读取的变量
+  message ReadVMVariableRequestVar {
+    string name = 1;
+    // 变量类别
+    enum ReadVMVariableRequestVarType {
+      // 客户机变量(非持久读写)
+      GUEST_VARIABLE = 0;
+      // VMX变量(持久读)
+      CONFIG_RUNTIME_ONLY = 1;
+      // 虚拟机内的环境变量(需要VMTools, winnt持久读写, linux/win9x持久读)
+      GUEST_ENVIRONMENT_VARIABLE = 2;
+    }
+    ReadVMVariableRequestVarType type = 2;
+  }
+  repeated ReadVMVariableRequestVar vars = 2;
+}
+
+message ReadVMVariableResponse {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要读取的变量
+  message ReadVMVariableResponseVar {
+    string name = 1;
+    // 如果变量不存在会为空
+    oneof ReadVMVariableResponseVarValue {
+      string value = 2;
+    }
+  }
+  repeated ReadVMVariableResponseVar vars = 2;
+}
+
+message WriteVMVariableRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要写入的变量
+  message WriteVMVariableRequestVar {
+    string name = 1;
+    string value = 2;
+    // 变量类别
+    enum WriteVMVariableRequestVarType {
+      // 客户机变量(非持久读写)
+      GUEST_VARIABLE = 0;
+      // VMX变量(持久读)
+      CONFIG_RUNTIME_ONLY = 1;
+      // 虚拟机内的环境变量(需要VMTools, winnt持久读写, linux/win9x持久读)
+      GUEST_ENVIRONMENT_VARIABLE = 2;
+    }
+    WriteVMVariableRequestVarType type = 3;
+  }
+  repeated WriteVMVariableRequestVar vars = 2;
+}
+
+message ListRunningVMsResponse {
+  // 虚拟机简略信息
+  message ListVMsResponseVM {
+    // 虚拟机VMX文件路径
+    string vmxFilePath = 1;
+  }
+  repeated ListVMsResponseVM vms = 1;
+}
+
+message VMDetailResponse {
+  // vcpu数量
+  uint32 vcpu = 1;
+  // 内存大小
+  uint64 memory = 2;
+  // 电源状态
+  enum VMDetailResponsePowerStatus {
+    // 异常, 需要登入vmware控制台手动处理
+    VM_UNKNOWN = 0;
+    // 关机中
+    VM_POWERING_OFF = 1;
+    // 已关机
+    VM_POWERED_OFF = 2;
+    // 开机中
+    VM_POWERING_ON = 3;
+    // 正在运行
+    VM_POWERED_ON = 4;
+    // 暂停中
+    VM_SUSPENDING = 5;
+    // 已暂停
+    VM_SUSPENDED = 6;
+    // 正在运行(VMTools也已正常运行)
+    VM_TOOLS_RUNNING = 7;
+    // 重启中
+    VM_RESETTING = 8;
+    // 等待用户交互, 需要登入vmware控制台手动处理
+    VM_BLOCKED_ON_MSG = 9;
+  }
+  VMDetailResponsePowerStatus powerStatus = 3;
+  // VMTools状态
+  enum VMDetailResponseVmToolsStatus {
+    // 未知状态
+    TOOLS_UNKNOWN = 0;
+    // 正在运行
+    TOOLS_RUNNING = 1;
+    // 未安装
+    TOOLS_NOT_INSTALLED = 2;
+  }
+  VMDetailResponseVmToolsStatus vmToolsStatus = 4;
+  // 客户机操作系统
+  string guestOS = 5;
+}
+
+message CreateVMSnapshotRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 快照名称(必须唯一)
+  string name = 2;
+  // 快照描述
+  string description = 3;
+  // 快照类别
+  enum CreateVMSnapshotType {
+    // 默认类别
+    NORMAL = 0;
+    // 包括内存
+    INCLUDE_MEMORY = 1;
+  }
+  CreateVMSnapshotType type = 4;
+}
+
+message RevertToSnapshotRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 快照名称(必须唯一)
+  string name = 2;
+}
+
+message RemoveVMSnapshotRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 快照名称(必须唯一)
+  string name = 2;
+  // 快照删除类别
+  enum CreateVMSnapshotType {
+    // 仅删除此快照
+    DEFAULT = 0;
+    // 递归删除子快照
+    REMOVE_CHILDREN = 1;
+  }
+  CreateVMSnapshotType type = 4;
+}
+
+message ListVMSnapshotsResponse {
+  // 快照简略信息
+  message ListVMSnapshotsResponseSnapshot {
+    string name = 1;
+  }
+  repeated ListVMSnapshotsResponseSnapshot snapshots = 1;
+}
+
+message VMSnapshotDetailRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 快照名称(必须唯一)
+  string name = 2;
+}
+
+message VMSnapshotDetailResponse {
+  string name = 1;
+  string description = 2;
+}
+
+message VMXRegisteredResponse {
+  oneof VMXRegisteredResponseWrap {
+    // 是否已经注册
+    bool registered = 1;
+  }
+}
+
+message ReadVMXVariableRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要读取的变量
+  message ReadVMXVariableRequestVar {
+    string name = 1;
+  }
+  repeated ReadVMXVariableRequestVar vars = 2;
+}
+
+message ReadVMXVariableResponse {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要读取的变量
+  message ReadVMXVariableResponseVar {
+    string name = 1;
+    // 如果变量不存在会为空
+    oneof ReadVMXVariableResponseVarValue {
+      string value = 2;
+    }
+  }
+  repeated ReadVMXVariableResponseVar vars = 2;
+}
+
+message WriteVMXVariableRequest {
+  // 虚拟机VMX文件路径
+  string vmxFilePath = 1;
+  // 要写入的变量
+  message WriteVMXVariableRequestVar {
+    string name = 1;
+    // 如果值为空则会删除变量
+    string value = 2;
+  }
+  repeated WriteVMXVariableRequestVar vars = 2;
 }
 
 service ApiService {
-  rpc Greet(GreetRequest) returns (GreetResponse) {}
+  // 注册虚拟机
+  rpc RegisterVM(RegisterVMRequest) returns (GenericResponse) {}
+  // 移除虚拟机
+  rpc UnregisterVM(UnregisterVMRequest) returns (GenericResponse) {}
+  // 克隆虚拟机
+  rpc CloneVM(CloneVMRequest) returns (GenericResponse) {}
+  // 删除虚拟机
+  rpc DeleteVM(DeleteVMRequest) returns (GenericResponse) {}
+  // 暂停虚拟机
+  rpc PauseVM(GenericRequest) returns (GenericResponse) {}
+  // 恢复已暂停的虚拟机
+  rpc ResumeVM(GenericRequest) returns (GenericResponse) {}
+  // 关闭虚拟机
+  rpc PowerOffVM(PowerOffVMRequest) returns (GenericResponse) {}
+  // 开启虚拟机
+  rpc PowerOnVM(PowerOnVMRequest) returns (GenericResponse) {}
+  // 重置虚拟机
+  rpc ResetVM(ResetVMRequest) returns (GenericResponse) {}
+  // 挂起虚拟机
+  rpc SuspendVM(GenericRequest) returns (GenericResponse) {}
+  // 获取虚拟机变量
+  rpc ReadVMVariable(ReadVMVariableRequest) returns (ReadVMVariableResponse) {}
+  // 写入虚拟机变量
+  rpc WriteVMVariable(WriteVMVariableRequest) returns (GenericResponse) {}
+  // 升级虚拟机硬件版本
+  rpc UpgradeVMHardware(GenericRequest) returns (GenericResponse) {}
+  // 列出正在运行的虚拟机列表
+  rpc ListRunningVMs(GenericRequest) returns (ListRunningVMsResponse) {}
+  // 获取虚拟机信息
+  rpc VMDetail(GenericRequest) returns (VMDetailResponse) {}
+
+  // 创建虚拟机快照
+  rpc CreateVMSnapshot(CreateVMSnapshotRequest) returns (GenericResponse) {}
+  // 恢复虚拟机快照
+  rpc RevertVMSnapshot(RevertToSnapshotRequest) returns (GenericResponse) {}
+  // 删除虚拟机快照
+  rpc RemoveVMSnapshot(RemoveVMSnapshotRequest) returns (GenericResponse) {}
+  // 获取虚拟机快照详情
+  rpc VMSnapshotDetail(VMSnapshotDetailRequest) returns (VMSnapshotDetailResponse) {}
+
+  // 检查VMX是否已经被注册到Vmware
+  rpc VMXRegistered(GenericRequest) returns (VMXRegisteredResponse) {}
+  // 读取VMX
+  rpc ReadVMXVariable(ReadVMXVariableRequest) returns (ReadVMXVariableResponse) {}
+  // 写入VMX
+  rpc WriteVMXVariable(WriteVMXVariableRequest) returns (GenericResponse) {}
+
 }

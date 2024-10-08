@@ -8,4 +8,8 @@ require (
 	google.golang.org/protobuf v1.34.2
 )
 
-require golang.org/x/text v0.14.0 // indirect
+require (
+	github.com/openvm-http/govix v1.0.2 // indirect
+	github.com/openvm-http/govmx/v2 v2.0.1 // indirect
+	golang.org/x/text v0.14.0 // indirect
+)
