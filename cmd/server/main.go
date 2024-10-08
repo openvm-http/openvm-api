@@ -1,9 +1,11 @@
 package main
 
 import (
+	"connectrpc.com/connect"
 	"context"
 	"errors"
 	openvmv1Connect "github.com/openvm-http/openvm-api/gen/openvm/v1/v1connect"
+	"github.com/openvm-http/openvm-api/internal/interceptor"
 	openvmServer "github.com/openvm-http/openvm-api/internal/service/openvm"
 	"log"
 	"net/http"
@@ -17,15 +19,26 @@ import (
 )
 
 func main() {
-	api := http.NewServeMux()
-	api.Handle(openvmv1Connect.NewApiServiceHandler(&openvmServer.ApiServer{}))
-	mux := http.NewServeMux()
-	mux.Handle("/api/", http.StripPrefix("/api", api))
-
+	if token := os.Getenv("ACCESS_TOKEN"); token != "" {
+		interceptor.AccessToken = token
+	} else {
+		log.Printf("Security Warning: ACCESS_TOKEN has not been set!\n")
+	}
 	addr := "localhost:8080"
 	if port := os.Getenv("PORT"); port != "" {
 		addr = ":" + port
+		log.Printf("Security Warning: Non-local network!\n")
 	}
+
+	interceptors := connect.WithInterceptors(interceptor.NewAuthInterceptor())
+	api := http.NewServeMux()
+	api.Handle(openvmv1Connect.NewApiServiceHandler(
+		&openvmServer.ApiServer{},
+		interceptors,
+	))
+	mux := http.NewServeMux()
+	mux.Handle("/api/", http.StripPrefix("/api", api))
+
 	srv := &http.Server{
 		Addr:    addr,
 		Handler: h2c.NewHandler(mux, &http2.Server{}),
