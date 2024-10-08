@@ -1,0 +1,41 @@
+name: Build Linux Prebuilt
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 'Install Build Deps'
+        run: |
+          sudo apt-get install -y build-essential make cmake git pkg-config
+
+      - name: 'Build'
+        run: |
+          mkdir prebuilt
+          go env
+          CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -o prebuilt/openvm-api cmd/server/main.go
+
+      - name: 'Copy RUNTIME'
+        run: |
+          # prebuilt/start.sh
+          echo "#!/bin/bash" > prebuilt/start.sh
+          echo "LD_LIBRARY_PATH=\$(pwd) \$(pwd)/openvm-api" >> prebuilt/start.sh
+          chmod +x prebuilt/start.sh
+          # prebuilt/libvixAllProducts.so
+          cp $(pwd)/vm_libvix/libs/linux64/libvixAllProducts.so prebuilt/
+      
+      - name: 'Pack'
+        run: |
+          cd prebuilt
+          zip -r ../openvm-api_prebuilt_linux_amd64.zip *
+
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+           name: openvm-api_prebuilt_linux_amd64
+           path: openvm-api_prebuilt_linux_amd64.zip
