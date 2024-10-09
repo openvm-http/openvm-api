@@ -367,10 +367,8 @@ func (s *ApiServer) ReadVMVariable(ctx context.Context, req *connect.Request[v1.
 			})
 		}
 		resp.Vars = append(resp.Vars, &v1.ReadVMVariableResponse_ReadVMVariableResponseVar{
-			Name: _v.Name,
-			ReadVMVariableResponseVarValue: &v1.ReadVMVariableResponse_ReadVMVariableResponseVar_Value{
-				Value: value,
-			},
+			Name:  _v.Name,
+			Value: value,
 		})
 	}
 
@@ -734,7 +732,9 @@ func (s *ApiServer) VMXRegistered(ctx context.Context, req *connect.Request[v1.G
 		}
 	}(h)
 
-	resp := &v1.VMXRegisteredResponse{}
+	resp := &v1.VMXRegisteredResponse{
+		Registered: true,
+	}
 	_, err = h.OpenVM(req.Msg.VmxFilePath, "")
 	if err != nil {
 		var vixError *govix.Error
@@ -750,13 +750,7 @@ func (s *ApiServer) VMXRegistered(ctx context.Context, req *connect.Request[v1.G
 				Module:  v1.ErrDetail_VIX,
 			})
 		}
-		resp.VMXRegisteredResponseWrap = &v1.VMXRegisteredResponse_Registered{
-			Registered: false,
-		}
-	} else {
-		resp.VMXRegisteredResponseWrap = &v1.VMXRegisteredResponse_Registered{
-			Registered: true,
-		}
+		resp.Registered = false
 	}
 
 	return connect.NewResponse(resp), nil
@@ -794,10 +788,7 @@ func (s *ApiServer) ReadVMXVariable(ctx context.Context, req *connect.Request[v1
 		respVar := &v1.ReadVMXVariableResponse_ReadVMXVariableResponseVar{
 			Name: v.Name,
 		}
-		_v, _ := o[v.Name]
-		respVar.ReadVMXVariableResponseVarValue = &v1.ReadVMXVariableResponse_ReadVMXVariableResponseVar_Value{
-			Value: _v,
-		}
+		respVar.Value, _ = o[v.Name]
 		resp.Vars = append(resp.Vars, respVar)
 	}
 

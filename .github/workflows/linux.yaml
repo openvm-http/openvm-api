@@ -18,7 +18,7 @@ jobs:
         run: |
           mkdir prebuilt
           go env
-          CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -o prebuilt/openvm-api cmd/server/main.go
+          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -o prebuilt/openvm-api cmd/server/main.go
 
       - name: 'Copy RUNTIME'
         run: |

@@ -136,9 +136,7 @@ message ReadVMVariableResponse {
   message ReadVMVariableResponseVar {
     string name = 1;
     // 如果变量不存在会为空
-    oneof ReadVMVariableResponseVarValue {
-      string value = 2;
-    }
+    string value = 2;
   }
   repeated ReadVMVariableResponseVar vars = 2;
 }
@@ -276,10 +274,8 @@ message VMSnapshotDetailResponse {
 }
 
 message VMXRegisteredResponse {
-  oneof VMXRegisteredResponseWrap {
-    // 是否已经注册
-    bool registered = 1;
-  }
+  // 是否已经注册
+  bool registered = 1;
 }
 
 message ReadVMXVariableRequest {
@@ -299,9 +295,7 @@ message ReadVMXVariableResponse {
   message ReadVMXVariableResponseVar {
     string name = 1;
     // 如果变量不存在会为空
-    oneof ReadVMXVariableResponseVarValue {
-      string value = 2;
-    }
+    string value = 2;
   }
   repeated ReadVMXVariableResponseVar vars = 2;
 }
