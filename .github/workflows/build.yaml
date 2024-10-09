@@ -15,11 +15,11 @@ jobs:
 
       - name: 'Build'
         run: |
-          export BUILD_DATETIME=$(date +%Y-%m-%d %T)
+          export BUILD_DATETIME=$(date '+%Y-%m-%d %H:%M:%S.%3N %Z' --date='TZ="Asia/Shanghai" now')
           export BUILD_GIT_TAG=$(git tag)
           mkdir prebuilt
           go env
-          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -ldflags "-X 'main.dateTime=`$BUILD_DATETIME`' -X 'main.gitTag=`$BUILD_GIT_TAG`' " -o prebuilt/openvm-api cmd/server/main.go
+          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -ldflags "-X 'main.dateTime=$BUILD_DATETIME' -X 'main.gitTag=$BUILD_GIT_TAG' " -o prebuilt/openvm-api cmd/server/main.go
 
       - name: 'Copy RUNTIME'
         run: |
@@ -60,11 +60,11 @@ jobs:
 
       - name: 'Build'
         run: |
-          export BUILD_DATETIME=$(date +%Y-%m-%d %T)
+          export BUILD_DATETIME=$(date '+%Y-%m-%d %H:%M:%S.%3N %Z' --date='TZ="Asia/Shanghai" now')
           export BUILD_GIT_TAG=$(git tag)
           mkdir prebuilt
           go env
-          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/win64 -lvixAllProducts -lpthread" go build -ldflags "-X 'main.dateTime=`$BUILD_DATETIME`' -X 'main.gitTag=`$BUILD_GIT_TAG`' " -o prebuilt/openvm-api.exe cmd/server/main.go
+          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/win64 -lvixAllProducts -lpthread" go build -ldflags "-X 'main.dateTime=$BUILD_DATETIME' -X 'main.gitTag=$BUILD_GIT_TAG' " -o prebuilt/openvm-api.exe cmd/server/main.go
 
       - name: 'Copy RUNTIME'
         run: |
