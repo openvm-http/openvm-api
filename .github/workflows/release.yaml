@@ -124,7 +124,7 @@ jobs:
 
       - name: Write Changes Log
         run: |
-          echo "**Full Changelog**: https://github.com/openvm-http/openvm-api/commits/v${{ env.VERSION }}" > CHANGELOG.md
+          echo "v${{ env.VERSION }} RELEASED!" > CHANGELOG.md
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -135,4 +135,4 @@ jobs:
           files: |
             openvm-api_prebuilt_linux_amd64.zip
             openvm-api_prebuilt_win_amd64.zip
-          draft: true
+          
