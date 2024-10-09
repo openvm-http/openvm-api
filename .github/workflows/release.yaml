@@ -139,4 +139,3 @@ jobs:
           files: |
             openvm-api_prebuilt_linux_amd64.zip
             openvm-api_prebuilt_win_amd64.zip
-          
