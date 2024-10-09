@@ -1,0 +1,138 @@
+name: "Build Release"
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions: write-all
+
+jobs:
+  check-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repository
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          token: ${{ github.token }}
+
+      - name: Extract version from tag
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+  Build-Linux:
+    needs: [check-version]
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 'Install Build Deps'
+        run: |
+          sudo apt-get install -y build-essential make cmake git pkg-config
+
+      - name: 'Build'
+        run: |
+          mkdir prebuilt
+          go env
+          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -o prebuilt/openvm-api cmd/server/main.go
+
+      - name: 'Copy RUNTIME'
+        run: |
+          # prebuilt/start.sh
+          echo "#!/bin/bash" > prebuilt/start.sh
+          echo "LD_LIBRARY_PATH=\$(pwd) \$(pwd)/openvm-api" >> prebuilt/start.sh
+          chmod +x prebuilt/start.sh
+          # prebuilt/libvixAllProducts.so
+          cp $(pwd)/vm_libvix/libs/linux64/libvixAllProducts.so prebuilt/
+
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: openvm-api_prebuilt_linux_amd64
+          path: prebuilt
+
+  Build-Windows:
+    needs: [check-version]
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: msys2 {0}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 'Setup MSYS2'
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          cache: false
+          install: >-
+            git
+            zip
+            mingw-w64-x86_64-go
+            mingw-w64-x86_64-toolchain
+            mingw-w64-x86_64-gcc-libs
+
+      - name: 'Build'
+        run: |
+          mkdir prebuilt
+          go env
+          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/win64 -lvixAllProducts -lpthread" go build -o prebuilt/openvm-api.exe cmd/server/main.go
+
+      - name: 'Copy RUNTIME'
+        run: |
+          cp /mingw64/bin/libgcc_s_seh-1.dll prebuilt/
+          cp /mingw64/bin/libwinpthread-1.dll prebuilt/
+          cp $(pwd)/vm_libvix/libs/win64/vixAllProducts.dll prebuilt/
+
+      - name: 'Upload artifact'
+        uses: actions/upload-artifact@v4
+        with:
+          name: openvm-api_prebuilt_win_amd64
+          path: prebuilt
+
+  release:
+    needs: [Build-Linux,Build-Windows]
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Clone Repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+          ref: master
+          token: ${{ github.token }}
+
+      - name: Download All Artifact
+        uses: actions/download-artifact@v4
+
+      - name: Compress subdirectories
+        run: |
+          cd ./openvm-api_prebuilt_win_amd64/
+          zip -q -r openvm-api_prebuilt_win_amd64.zip *
+          cd ..
+          cd ./openvm-api_prebuilt_linux_amd64/
+          zip -q -r openvm-api_prebuilt_linux_amd64 *
+          cd ..
+          rm ./openvm-api_prebuilt_linux_amd64.zip -rf
+          rm ./openvm-api_prebuilt_win_amd64.zip -rf
+          mv ./openvm-api_prebuilt_linux_amd64/openvm-api_prebuilt_linux_amd64.zip ./
+          mv ./openvm-api_prebuilt_win_amd64/openvm-api_prebuilt_win_amd64.zip ./
+      - name: Extract version from tag
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+
+      - name: Write Changes Log
+        run: |
+          echo "**Full Changelog**: https://github.com/openvm-http/openvm-api/commits/v${{ env.VERSION }}" > CHANGELOG.md
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: v${{ env.VERSION }}
+          token: ${{ github.token }}
+          body_path: CHANGELOG.md
+          files: |
+            openvm-api_prebuilt_linux_amd64.zip
+            openvm-api_prebuilt_win_amd64.zip
+          draft: true
