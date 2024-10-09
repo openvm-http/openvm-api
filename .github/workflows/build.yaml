@@ -15,9 +15,12 @@ jobs:
 
       - name: 'Build'
         run: |
+          export GOTOOLCHAIN=go1.20
+          export CGO_CFLAGS="$CGO_CFLAGS -I$(pwd)/vm_libvix/include"
+          export CGO_LDFLAGS="$CGO_LDFLAGS -L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread"
           mkdir prebuilt
           go env
-          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/linux64 -lvixAllProducts -ldl -lpthread" go build -o prebuilt/openvm-api cmd/server/main.go
+          go build -ldflags "-X 'main.dateTime=`date +%Y-%m-%d %T`' -X 'main.gitTag=`git tag`' " -o prebuilt/openvm-api cmd/server/main.go
 
       - name: 'Copy RUNTIME'
         run: |
@@ -58,9 +61,12 @@ jobs:
 
       - name: 'Build'
         run: |
+          export GOTOOLCHAIN=go1.20
+          export CGO_CFLAGS="$CGO_CFLAGS -I$(pwd)/vm_libvix/include"
+          export CGO_LDFLAGS="$CGO_LDFLAGS -I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/win64 -lvixAllProducts -lpthread"
           mkdir prebuilt
           go env
-          GOTOOLCHAIN=go1.20 CGO_CFLAGS="-I$(pwd)/vm_libvix/include" CGO_LDFLAGS="-L$(pwd)/vm_libvix/libs/win64 -lvixAllProducts -lpthread" go build -o prebuilt/openvm-api.exe cmd/server/main.go
+          go build -ldflags "-X 'main.dateTime=`date +%Y-%m-%d %T`' -X 'main.gitTag=`git tag`' " -o prebuilt/openvm-api.exe cmd/server/main.go
 
       - name: 'Copy RUNTIME'
         run: |

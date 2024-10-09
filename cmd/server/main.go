@@ -18,7 +18,11 @@ import (
 	"golang.org/x/net/http2/h2c"
 )
 
+var gitTag string
+var dateTime string
+
 func main() {
+	log.Printf("OpenVM-API %s %s", gitTag, dateTime)
 	if token := os.Getenv("ACCESS_TOKEN"); token != "" {
 		interceptor.AccessToken = token
 	} else {
