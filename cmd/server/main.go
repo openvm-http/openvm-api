@@ -7,6 +7,7 @@ import (
 	openvmv1Connect "github.com/openvm-http/openvm-api/gen/openvm/v1/v1connect"
 	"github.com/openvm-http/openvm-api/internal/interceptor"
 	openvmServer "github.com/openvm-http/openvm-api/internal/service/openvm"
+	"github.com/rs/cors"
 	"log"
 	"net/http"
 	"os"
@@ -20,6 +21,45 @@ import (
 
 var gitTag string
 var dateTime string
+
+func disableCORS() *cors.Cors {
+	// To let web developers play with the demo service from browsers, we need a
+	// very permissive CORS setup.
+	return cors.New(cors.Options{
+		AllowedMethods: []string{
+			http.MethodHead,
+			http.MethodGet,
+			http.MethodPost,
+			http.MethodPut,
+			http.MethodPatch,
+			http.MethodDelete,
+		},
+		AllowOriginFunc: func(_ /* origin */ string) bool {
+			// Allow all origins, which effectively disables CORS.
+			return true
+		},
+		AllowedHeaders: []string{"*"},
+		ExposedHeaders: []string{
+			// Content-Type is in the default safelist.
+			"Accept",
+			"Accept-Encoding",
+			"Accept-Post",
+			"Connect-Accept-Encoding",
+			"Connect-Content-Encoding",
+			"Content-Encoding",
+			"Grpc-Accept-Encoding",
+			"Grpc-Encoding",
+			"Grpc-Message",
+			"Grpc-Status",
+			"Grpc-Status-Details-Bin",
+		},
+		// Let browsers cache CORS information for longer, which reduces the number
+		// of preflight requests. Any changes to ExposedHeaders won't take effect
+		// until the cached data expires. FF caps this value at 24h, and modern
+		// Chrome caps it at 2h.
+		MaxAge: int(2 * time.Hour / time.Second),
+	})
+}
 
 func main() {
 	log.Printf("OpenVM-API %s %s", gitTag, dateTime)
@@ -42,10 +82,17 @@ func main() {
 	))
 	mux := http.NewServeMux()
 	mux.Handle("/api/", http.StripPrefix("/api", api))
+	var httpServerMux http.Handler
+	if disableCors := os.Getenv("DISABLE_CORS"); disableCors == "YES_I_KNOWN_NOT_SAFE" {
+		log.Printf("Security Warning: DISABLE_CORS set!\n")
+		httpServerMux = disableCORS().Handler(mux)
+	} else {
+		httpServerMux = mux
+	}
 
 	srv := &http.Server{
 		Addr:    addr,
-		Handler: h2c.NewHandler(mux, &http2.Server{}),
+		Handler: h2c.NewHandler(httpServerMux, &http2.Server{}),
 	}
 	log.Printf("HTTP server listening on %s\n", addr)
 	signals := make(chan os.Signal, 1)
