@@ -32,16 +32,6 @@ message GenericResponse {
   // 目前空响应
 }
 
-message RegisterVMRequest {
-  // VMX文件路径
-  string vmxFilePath = 1;
-}
-
-message UnregisterVMRequest {
-  // VMX文件路径
-  string vmxFilePath = 1;
-}
-
 message CloneVMRequest {
   // 源虚拟机VMX文件路径
   string vmxFilePathSrc = 1;
@@ -313,10 +303,6 @@ message WriteVMXVariableRequest {
 }
 
 service ApiService {
-  // 注册虚拟机
-  rpc RegisterVM(RegisterVMRequest) returns (GenericResponse) {}
-  // 移除虚拟机
-  rpc UnregisterVM(UnregisterVMRequest) returns (GenericResponse) {}
   // 克隆虚拟机
   rpc CloneVM(CloneVMRequest) returns (GenericResponse) {}
   // 删除虚拟机

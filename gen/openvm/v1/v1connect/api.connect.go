@@ -33,10 +33,6 @@ const (
 // reflection-formatted method names, remove the leading slash and convert the remaining slash to a
 // period.
 const (
-	// ApiServiceRegisterVMProcedure is the fully-qualified name of the ApiService's RegisterVM RPC.
-	ApiServiceRegisterVMProcedure = "/openvm.v1.ApiService/RegisterVM"
-	// ApiServiceUnregisterVMProcedure is the fully-qualified name of the ApiService's UnregisterVM RPC.
-	ApiServiceUnregisterVMProcedure = "/openvm.v1.ApiService/UnregisterVM"
 	// ApiServiceCloneVMProcedure is the fully-qualified name of the ApiService's CloneVM RPC.
 	ApiServiceCloneVMProcedure = "/openvm.v1.ApiService/CloneVM"
 	// ApiServiceDeleteVMProcedure is the fully-qualified name of the ApiService's DeleteVM RPC.
@@ -93,8 +89,6 @@ const (
 // These variables are the protoreflect.Descriptor objects for the RPCs defined in this package.
 var (
 	apiServiceServiceDescriptor                 = v1.File_openvm_v1_api_proto.Services().ByName("ApiService")
-	apiServiceRegisterVMMethodDescriptor        = apiServiceServiceDescriptor.Methods().ByName("RegisterVM")
-	apiServiceUnregisterVMMethodDescriptor      = apiServiceServiceDescriptor.Methods().ByName("UnregisterVM")
 	apiServiceCloneVMMethodDescriptor           = apiServiceServiceDescriptor.Methods().ByName("CloneVM")
 	apiServiceDeleteVMMethodDescriptor          = apiServiceServiceDescriptor.Methods().ByName("DeleteVM")
 	apiServicePauseVMMethodDescriptor           = apiServiceServiceDescriptor.Methods().ByName("PauseVM")
@@ -119,10 +113,6 @@ var (
 
 // ApiServiceClient is a client for the openvm.v1.ApiService service.
 type ApiServiceClient interface {
-	// 注册虚拟机
-	RegisterVM(context.Context, *connect.Request[v1.RegisterVMRequest]) (*connect.Response[v1.GenericResponse], error)
-	// 移除虚拟机
-	UnregisterVM(context.Context, *connect.Request[v1.UnregisterVMRequest]) (*connect.Response[v1.GenericResponse], error)
 	// 克隆虚拟机
 	CloneVM(context.Context, *connect.Request[v1.CloneVMRequest]) (*connect.Response[v1.GenericResponse], error)
 	// 删除虚拟机
@@ -175,18 +165,6 @@ type ApiServiceClient interface {
 func NewApiServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...connect.ClientOption) ApiServiceClient {
 	baseURL = strings.TrimRight(baseURL, "/")
 	return &apiServiceClient{
-		registerVM: connect.NewClient[v1.RegisterVMRequest, v1.GenericResponse](
-			httpClient,
-			baseURL+ApiServiceRegisterVMProcedure,
-			connect.WithSchema(apiServiceRegisterVMMethodDescriptor),
-			connect.WithClientOptions(opts...),
-		),
-		unregisterVM: connect.NewClient[v1.UnregisterVMRequest, v1.GenericResponse](
-			httpClient,
-			baseURL+ApiServiceUnregisterVMProcedure,
-			connect.WithSchema(apiServiceUnregisterVMMethodDescriptor),
-			connect.WithClientOptions(opts...),
-		),
 		cloneVM: connect.NewClient[v1.CloneVMRequest, v1.GenericResponse](
 			httpClient,
 			baseURL+ApiServiceCloneVMProcedure,
@@ -312,8 +290,6 @@ func NewApiServiceClient(httpClient connect.HTTPClient, baseURL string, opts ...
 
 // apiServiceClient implements ApiServiceClient.
 type apiServiceClient struct {
-	registerVM        *connect.Client[v1.RegisterVMRequest, v1.GenericResponse]
-	unregisterVM      *connect.Client[v1.UnregisterVMRequest, v1.GenericResponse]
 	cloneVM           *connect.Client[v1.CloneVMRequest, v1.GenericResponse]
 	deleteVM          *connect.Client[v1.DeleteVMRequest, v1.GenericResponse]
 	pauseVM           *connect.Client[v1.GenericRequest, v1.GenericResponse]
@@ -334,16 +310,6 @@ type apiServiceClient struct {
 	vMXRegistered     *connect.Client[v1.GenericRequest, v1.VMXRegisteredResponse]
 	readVMXVariable   *connect.Client[v1.ReadVMXVariableRequest, v1.ReadVMXVariableResponse]
 	writeVMXVariable  *connect.Client[v1.WriteVMXVariableRequest, v1.GenericResponse]
-}
-
-// RegisterVM calls openvm.v1.ApiService.RegisterVM.
-func (c *apiServiceClient) RegisterVM(ctx context.Context, req *connect.Request[v1.RegisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	return c.registerVM.CallUnary(ctx, req)
-}
-
-// UnregisterVM calls openvm.v1.ApiService.UnregisterVM.
-func (c *apiServiceClient) UnregisterVM(ctx context.Context, req *connect.Request[v1.UnregisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	return c.unregisterVM.CallUnary(ctx, req)
 }
 
 // CloneVM calls openvm.v1.ApiService.CloneVM.
@@ -448,10 +414,6 @@ func (c *apiServiceClient) WriteVMXVariable(ctx context.Context, req *connect.Re
 
 // ApiServiceHandler is an implementation of the openvm.v1.ApiService service.
 type ApiServiceHandler interface {
-	// 注册虚拟机
-	RegisterVM(context.Context, *connect.Request[v1.RegisterVMRequest]) (*connect.Response[v1.GenericResponse], error)
-	// 移除虚拟机
-	UnregisterVM(context.Context, *connect.Request[v1.UnregisterVMRequest]) (*connect.Response[v1.GenericResponse], error)
 	// 克隆虚拟机
 	CloneVM(context.Context, *connect.Request[v1.CloneVMRequest]) (*connect.Response[v1.GenericResponse], error)
 	// 删除虚拟机
@@ -500,18 +462,6 @@ type ApiServiceHandler interface {
 // By default, handlers support the Connect, gRPC, and gRPC-Web protocols with the binary Protobuf
 // and JSON codecs. They also support gzip compression.
 func NewApiServiceHandler(svc ApiServiceHandler, opts ...connect.HandlerOption) (string, http.Handler) {
-	apiServiceRegisterVMHandler := connect.NewUnaryHandler(
-		ApiServiceRegisterVMProcedure,
-		svc.RegisterVM,
-		connect.WithSchema(apiServiceRegisterVMMethodDescriptor),
-		connect.WithHandlerOptions(opts...),
-	)
-	apiServiceUnregisterVMHandler := connect.NewUnaryHandler(
-		ApiServiceUnregisterVMProcedure,
-		svc.UnregisterVM,
-		connect.WithSchema(apiServiceUnregisterVMMethodDescriptor),
-		connect.WithHandlerOptions(opts...),
-	)
 	apiServiceCloneVMHandler := connect.NewUnaryHandler(
 		ApiServiceCloneVMProcedure,
 		svc.CloneVM,
@@ -634,10 +584,6 @@ func NewApiServiceHandler(svc ApiServiceHandler, opts ...connect.HandlerOption) 
 	)
 	return "/openvm.v1.ApiService/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		switch r.URL.Path {
-		case ApiServiceRegisterVMProcedure:
-			apiServiceRegisterVMHandler.ServeHTTP(w, r)
-		case ApiServiceUnregisterVMProcedure:
-			apiServiceUnregisterVMHandler.ServeHTTP(w, r)
 		case ApiServiceCloneVMProcedure:
 			apiServiceCloneVMHandler.ServeHTTP(w, r)
 		case ApiServiceDeleteVMProcedure:
@@ -686,14 +632,6 @@ func NewApiServiceHandler(svc ApiServiceHandler, opts ...connect.HandlerOption) 
 
 // UnimplementedApiServiceHandler returns CodeUnimplemented from all methods.
 type UnimplementedApiServiceHandler struct{}
-
-func (UnimplementedApiServiceHandler) RegisterVM(context.Context, *connect.Request[v1.RegisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("openvm.v1.ApiService.RegisterVM is not implemented"))
-}
-
-func (UnimplementedApiServiceHandler) UnregisterVM(context.Context, *connect.Request[v1.UnregisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("openvm.v1.ApiService.UnregisterVM is not implemented"))
-}
 
 func (UnimplementedApiServiceHandler) CloneVM(context.Context, *connect.Request[v1.CloneVMRequest]) (*connect.Response[v1.GenericResponse], error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, errors.New("openvm.v1.ApiService.CloneVM is not implemented"))

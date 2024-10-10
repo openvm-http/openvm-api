@@ -127,7 +127,7 @@ func (x CloneVMRequest_CloneVMRequestType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use CloneVMRequest_CloneVMRequestType.Descriptor instead.
 func (CloneVMRequest_CloneVMRequestType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{5, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{3, 0}
 }
 
 // 操作类别
@@ -176,7 +176,7 @@ func (x DeleteVMRequest_DeleteVMRequestType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DeleteVMRequest_DeleteVMRequestType.Descriptor instead.
 func (DeleteVMRequest_DeleteVMRequestType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{6, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{4, 0}
 }
 
 // 操作类别
@@ -225,7 +225,7 @@ func (x PowerOffVMRequest_PowerOffVMRequestType) Number() protoreflect.EnumNumbe
 
 // Deprecated: Use PowerOffVMRequest_PowerOffVMRequestType.Descriptor instead.
 func (PowerOffVMRequest_PowerOffVMRequestType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{7, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{5, 0}
 }
 
 // 操作类别
@@ -274,7 +274,7 @@ func (x PowerOnVMRequest_PowerOnVMRequestType) Number() protoreflect.EnumNumber 
 
 // Deprecated: Use PowerOnVMRequest_PowerOnVMRequestType.Descriptor instead.
 func (PowerOnVMRequest_PowerOnVMRequestType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{8, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{6, 0}
 }
 
 // 操作类别
@@ -323,7 +323,7 @@ func (x ResetVMRequest_ResetVMRequestType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ResetVMRequest_ResetVMRequestType.Descriptor instead.
 func (ResetVMRequest_ResetVMRequestType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{9, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{7, 0}
 }
 
 // 变量类别
@@ -376,7 +376,7 @@ func (x ReadVMVariableRequest_ReadVMVariableRequestVar_ReadVMVariableRequestVarT
 
 // Deprecated: Use ReadVMVariableRequest_ReadVMVariableRequestVar_ReadVMVariableRequestVarType.Descriptor instead.
 func (ReadVMVariableRequest_ReadVMVariableRequestVar_ReadVMVariableRequestVarType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10, 0, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{8, 0, 0}
 }
 
 // 变量类别
@@ -429,7 +429,7 @@ func (x WriteVMVariableRequest_WriteVMVariableRequestVar_WriteVMVariableRequestV
 
 // Deprecated: Use WriteVMVariableRequest_WriteVMVariableRequestVar_WriteVMVariableRequestVarType.Descriptor instead.
 func (WriteVMVariableRequest_WriteVMVariableRequestVar_WriteVMVariableRequestVarType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12, 0, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10, 0, 0}
 }
 
 // 电源状态
@@ -510,7 +510,7 @@ func (x VMDetailResponse_VMDetailResponsePowerStatus) Number() protoreflect.Enum
 
 // Deprecated: Use VMDetailResponse_VMDetailResponsePowerStatus.Descriptor instead.
 func (VMDetailResponse_VMDetailResponsePowerStatus) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{14, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12, 0}
 }
 
 // VMTools状态
@@ -563,7 +563,7 @@ func (x VMDetailResponse_VMDetailResponseVmToolsStatus) Number() protoreflect.En
 
 // Deprecated: Use VMDetailResponse_VMDetailResponseVmToolsStatus.Descriptor instead.
 func (VMDetailResponse_VMDetailResponseVmToolsStatus) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{14, 1}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12, 1}
 }
 
 // 快照类别
@@ -612,7 +612,7 @@ func (x CreateVMSnapshotRequest_CreateVMSnapshotType) Number() protoreflect.Enum
 
 // Deprecated: Use CreateVMSnapshotRequest_CreateVMSnapshotType.Descriptor instead.
 func (CreateVMSnapshotRequest_CreateVMSnapshotType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{15, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{13, 0}
 }
 
 // 快照删除类别
@@ -661,7 +661,7 @@ func (x RemoveVMSnapshotRequest_CreateVMSnapshotType) Number() protoreflect.Enum
 
 // Deprecated: Use RemoveVMSnapshotRequest_CreateVMSnapshotType.Descriptor instead.
 func (RemoveVMSnapshotRequest_CreateVMSnapshotType) EnumDescriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{17, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{15, 0}
 }
 
 type ErrDetail struct {
@@ -806,102 +806,6 @@ func (*GenericResponse) Descriptor() ([]byte, []int) {
 	return file_openvm_v1_api_proto_rawDescGZIP(), []int{2}
 }
 
-type RegisterVMRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// VMX文件路径
-	VmxFilePath string `protobuf:"bytes,1,opt,name=vmxFilePath,proto3" json:"vmxFilePath,omitempty"`
-}
-
-func (x *RegisterVMRequest) Reset() {
-	*x = RegisterVMRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *RegisterVMRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*RegisterVMRequest) ProtoMessage() {}
-
-func (x *RegisterVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use RegisterVMRequest.ProtoReflect.Descriptor instead.
-func (*RegisterVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *RegisterVMRequest) GetVmxFilePath() string {
-	if x != nil {
-		return x.VmxFilePath
-	}
-	return ""
-}
-
-type UnregisterVMRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	// VMX文件路径
-	VmxFilePath string `protobuf:"bytes,1,opt,name=vmxFilePath,proto3" json:"vmxFilePath,omitempty"`
-}
-
-func (x *UnregisterVMRequest) Reset() {
-	*x = UnregisterVMRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *UnregisterVMRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*UnregisterVMRequest) ProtoMessage() {}
-
-func (x *UnregisterVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use UnregisterVMRequest.ProtoReflect.Descriptor instead.
-func (*UnregisterVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *UnregisterVMRequest) GetVmxFilePath() string {
-	if x != nil {
-		return x.VmxFilePath
-	}
-	return ""
-}
-
 type CloneVMRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -917,7 +821,7 @@ type CloneVMRequest struct {
 func (x *CloneVMRequest) Reset() {
 	*x = CloneVMRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[5]
+		mi := &file_openvm_v1_api_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -930,7 +834,7 @@ func (x *CloneVMRequest) String() string {
 func (*CloneVMRequest) ProtoMessage() {}
 
 func (x *CloneVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[5]
+	mi := &file_openvm_v1_api_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -943,7 +847,7 @@ func (x *CloneVMRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloneVMRequest.ProtoReflect.Descriptor instead.
 func (*CloneVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{5}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *CloneVMRequest) GetVmxFilePathSrc() string {
@@ -980,7 +884,7 @@ type DeleteVMRequest struct {
 func (x *DeleteVMRequest) Reset() {
 	*x = DeleteVMRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[6]
+		mi := &file_openvm_v1_api_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -993,7 +897,7 @@ func (x *DeleteVMRequest) String() string {
 func (*DeleteVMRequest) ProtoMessage() {}
 
 func (x *DeleteVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[6]
+	mi := &file_openvm_v1_api_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1006,7 +910,7 @@ func (x *DeleteVMRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteVMRequest.ProtoReflect.Descriptor instead.
 func (*DeleteVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{6}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *DeleteVMRequest) GetVmxFilePath() string {
@@ -1036,7 +940,7 @@ type PowerOffVMRequest struct {
 func (x *PowerOffVMRequest) Reset() {
 	*x = PowerOffVMRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[7]
+		mi := &file_openvm_v1_api_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1049,7 +953,7 @@ func (x *PowerOffVMRequest) String() string {
 func (*PowerOffVMRequest) ProtoMessage() {}
 
 func (x *PowerOffVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[7]
+	mi := &file_openvm_v1_api_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1062,7 +966,7 @@ func (x *PowerOffVMRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PowerOffVMRequest.ProtoReflect.Descriptor instead.
 func (*PowerOffVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{7}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *PowerOffVMRequest) GetVmxFilePath() string {
@@ -1092,7 +996,7 @@ type PowerOnVMRequest struct {
 func (x *PowerOnVMRequest) Reset() {
 	*x = PowerOnVMRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[8]
+		mi := &file_openvm_v1_api_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1105,7 +1009,7 @@ func (x *PowerOnVMRequest) String() string {
 func (*PowerOnVMRequest) ProtoMessage() {}
 
 func (x *PowerOnVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[8]
+	mi := &file_openvm_v1_api_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1118,7 +1022,7 @@ func (x *PowerOnVMRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PowerOnVMRequest.ProtoReflect.Descriptor instead.
 func (*PowerOnVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{8}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *PowerOnVMRequest) GetVmxFilePath() string {
@@ -1148,7 +1052,7 @@ type ResetVMRequest struct {
 func (x *ResetVMRequest) Reset() {
 	*x = ResetVMRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[9]
+		mi := &file_openvm_v1_api_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1161,7 +1065,7 @@ func (x *ResetVMRequest) String() string {
 func (*ResetVMRequest) ProtoMessage() {}
 
 func (x *ResetVMRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[9]
+	mi := &file_openvm_v1_api_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1174,7 +1078,7 @@ func (x *ResetVMRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ResetVMRequest.ProtoReflect.Descriptor instead.
 func (*ResetVMRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{9}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ResetVMRequest) GetVmxFilePath() string {
@@ -1204,7 +1108,7 @@ type ReadVMVariableRequest struct {
 func (x *ReadVMVariableRequest) Reset() {
 	*x = ReadVMVariableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[10]
+		mi := &file_openvm_v1_api_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1217,7 +1121,7 @@ func (x *ReadVMVariableRequest) String() string {
 func (*ReadVMVariableRequest) ProtoMessage() {}
 
 func (x *ReadVMVariableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[10]
+	mi := &file_openvm_v1_api_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1230,7 +1134,7 @@ func (x *ReadVMVariableRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadVMVariableRequest.ProtoReflect.Descriptor instead.
 func (*ReadVMVariableRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ReadVMVariableRequest) GetVmxFilePath() string {
@@ -1260,7 +1164,7 @@ type ReadVMVariableResponse struct {
 func (x *ReadVMVariableResponse) Reset() {
 	*x = ReadVMVariableResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[11]
+		mi := &file_openvm_v1_api_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1273,7 +1177,7 @@ func (x *ReadVMVariableResponse) String() string {
 func (*ReadVMVariableResponse) ProtoMessage() {}
 
 func (x *ReadVMVariableResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[11]
+	mi := &file_openvm_v1_api_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1286,7 +1190,7 @@ func (x *ReadVMVariableResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadVMVariableResponse.ProtoReflect.Descriptor instead.
 func (*ReadVMVariableResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{11}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ReadVMVariableResponse) GetVmxFilePath() string {
@@ -1316,7 +1220,7 @@ type WriteVMVariableRequest struct {
 func (x *WriteVMVariableRequest) Reset() {
 	*x = WriteVMVariableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[12]
+		mi := &file_openvm_v1_api_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1329,7 +1233,7 @@ func (x *WriteVMVariableRequest) String() string {
 func (*WriteVMVariableRequest) ProtoMessage() {}
 
 func (x *WriteVMVariableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[12]
+	mi := &file_openvm_v1_api_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1342,7 +1246,7 @@ func (x *WriteVMVariableRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteVMVariableRequest.ProtoReflect.Descriptor instead.
 func (*WriteVMVariableRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *WriteVMVariableRequest) GetVmxFilePath() string {
@@ -1370,7 +1274,7 @@ type ListRunningVMsResponse struct {
 func (x *ListRunningVMsResponse) Reset() {
 	*x = ListRunningVMsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[13]
+		mi := &file_openvm_v1_api_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1383,7 +1287,7 @@ func (x *ListRunningVMsResponse) String() string {
 func (*ListRunningVMsResponse) ProtoMessage() {}
 
 func (x *ListRunningVMsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[13]
+	mi := &file_openvm_v1_api_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1396,7 +1300,7 @@ func (x *ListRunningVMsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRunningVMsResponse.ProtoReflect.Descriptor instead.
 func (*ListRunningVMsResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{13}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *ListRunningVMsResponse) GetVms() []*ListRunningVMsResponse_ListVMsResponseVM {
@@ -1424,7 +1328,7 @@ type VMDetailResponse struct {
 func (x *VMDetailResponse) Reset() {
 	*x = VMDetailResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[14]
+		mi := &file_openvm_v1_api_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1437,7 +1341,7 @@ func (x *VMDetailResponse) String() string {
 func (*VMDetailResponse) ProtoMessage() {}
 
 func (x *VMDetailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[14]
+	mi := &file_openvm_v1_api_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1450,7 +1354,7 @@ func (x *VMDetailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VMDetailResponse.ProtoReflect.Descriptor instead.
 func (*VMDetailResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{14}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *VMDetailResponse) GetVcpu() uint32 {
@@ -1505,7 +1409,7 @@ type CreateVMSnapshotRequest struct {
 func (x *CreateVMSnapshotRequest) Reset() {
 	*x = CreateVMSnapshotRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[15]
+		mi := &file_openvm_v1_api_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1518,7 +1422,7 @@ func (x *CreateVMSnapshotRequest) String() string {
 func (*CreateVMSnapshotRequest) ProtoMessage() {}
 
 func (x *CreateVMSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[15]
+	mi := &file_openvm_v1_api_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1531,7 +1435,7 @@ func (x *CreateVMSnapshotRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateVMSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*CreateVMSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{15}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *CreateVMSnapshotRequest) GetVmxFilePath() string {
@@ -1576,7 +1480,7 @@ type RevertToSnapshotRequest struct {
 func (x *RevertToSnapshotRequest) Reset() {
 	*x = RevertToSnapshotRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[16]
+		mi := &file_openvm_v1_api_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1589,7 +1493,7 @@ func (x *RevertToSnapshotRequest) String() string {
 func (*RevertToSnapshotRequest) ProtoMessage() {}
 
 func (x *RevertToSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[16]
+	mi := &file_openvm_v1_api_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1602,7 +1506,7 @@ func (x *RevertToSnapshotRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevertToSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*RevertToSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{16}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *RevertToSnapshotRequest) GetVmxFilePath() string {
@@ -1634,7 +1538,7 @@ type RemoveVMSnapshotRequest struct {
 func (x *RemoveVMSnapshotRequest) Reset() {
 	*x = RemoveVMSnapshotRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[17]
+		mi := &file_openvm_v1_api_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1647,7 +1551,7 @@ func (x *RemoveVMSnapshotRequest) String() string {
 func (*RemoveVMSnapshotRequest) ProtoMessage() {}
 
 func (x *RemoveVMSnapshotRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[17]
+	mi := &file_openvm_v1_api_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1660,7 +1564,7 @@ func (x *RemoveVMSnapshotRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveVMSnapshotRequest.ProtoReflect.Descriptor instead.
 func (*RemoveVMSnapshotRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{17}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *RemoveVMSnapshotRequest) GetVmxFilePath() string {
@@ -1695,7 +1599,7 @@ type ListVMSnapshotsResponse struct {
 func (x *ListVMSnapshotsResponse) Reset() {
 	*x = ListVMSnapshotsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[18]
+		mi := &file_openvm_v1_api_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1708,7 +1612,7 @@ func (x *ListVMSnapshotsResponse) String() string {
 func (*ListVMSnapshotsResponse) ProtoMessage() {}
 
 func (x *ListVMSnapshotsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[18]
+	mi := &file_openvm_v1_api_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1721,7 +1625,7 @@ func (x *ListVMSnapshotsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListVMSnapshotsResponse.ProtoReflect.Descriptor instead.
 func (*ListVMSnapshotsResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{18}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *ListVMSnapshotsResponse) GetSnapshots() []*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot {
@@ -1745,7 +1649,7 @@ type VMSnapshotDetailRequest struct {
 func (x *VMSnapshotDetailRequest) Reset() {
 	*x = VMSnapshotDetailRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[19]
+		mi := &file_openvm_v1_api_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1758,7 +1662,7 @@ func (x *VMSnapshotDetailRequest) String() string {
 func (*VMSnapshotDetailRequest) ProtoMessage() {}
 
 func (x *VMSnapshotDetailRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[19]
+	mi := &file_openvm_v1_api_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1771,7 +1675,7 @@ func (x *VMSnapshotDetailRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VMSnapshotDetailRequest.ProtoReflect.Descriptor instead.
 func (*VMSnapshotDetailRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{19}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *VMSnapshotDetailRequest) GetVmxFilePath() string {
@@ -1800,7 +1704,7 @@ type VMSnapshotDetailResponse struct {
 func (x *VMSnapshotDetailResponse) Reset() {
 	*x = VMSnapshotDetailResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[20]
+		mi := &file_openvm_v1_api_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1813,7 +1717,7 @@ func (x *VMSnapshotDetailResponse) String() string {
 func (*VMSnapshotDetailResponse) ProtoMessage() {}
 
 func (x *VMSnapshotDetailResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[20]
+	mi := &file_openvm_v1_api_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1826,7 +1730,7 @@ func (x *VMSnapshotDetailResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VMSnapshotDetailResponse.ProtoReflect.Descriptor instead.
 func (*VMSnapshotDetailResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{20}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *VMSnapshotDetailResponse) GetName() string {
@@ -1855,7 +1759,7 @@ type VMXRegisteredResponse struct {
 func (x *VMXRegisteredResponse) Reset() {
 	*x = VMXRegisteredResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[21]
+		mi := &file_openvm_v1_api_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1868,7 +1772,7 @@ func (x *VMXRegisteredResponse) String() string {
 func (*VMXRegisteredResponse) ProtoMessage() {}
 
 func (x *VMXRegisteredResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[21]
+	mi := &file_openvm_v1_api_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1881,7 +1785,7 @@ func (x *VMXRegisteredResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VMXRegisteredResponse.ProtoReflect.Descriptor instead.
 func (*VMXRegisteredResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{21}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *VMXRegisteredResponse) GetRegistered() bool {
@@ -1904,7 +1808,7 @@ type ReadVMXVariableRequest struct {
 func (x *ReadVMXVariableRequest) Reset() {
 	*x = ReadVMXVariableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[22]
+		mi := &file_openvm_v1_api_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1917,7 +1821,7 @@ func (x *ReadVMXVariableRequest) String() string {
 func (*ReadVMXVariableRequest) ProtoMessage() {}
 
 func (x *ReadVMXVariableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[22]
+	mi := &file_openvm_v1_api_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1930,7 +1834,7 @@ func (x *ReadVMXVariableRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadVMXVariableRequest.ProtoReflect.Descriptor instead.
 func (*ReadVMXVariableRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{22}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *ReadVMXVariableRequest) GetVmxFilePath() string {
@@ -1960,7 +1864,7 @@ type ReadVMXVariableResponse struct {
 func (x *ReadVMXVariableResponse) Reset() {
 	*x = ReadVMXVariableResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[23]
+		mi := &file_openvm_v1_api_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1973,7 +1877,7 @@ func (x *ReadVMXVariableResponse) String() string {
 func (*ReadVMXVariableResponse) ProtoMessage() {}
 
 func (x *ReadVMXVariableResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[23]
+	mi := &file_openvm_v1_api_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1986,7 +1890,7 @@ func (x *ReadVMXVariableResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReadVMXVariableResponse.ProtoReflect.Descriptor instead.
 func (*ReadVMXVariableResponse) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{23}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *ReadVMXVariableResponse) GetVmxFilePath() string {
@@ -2016,7 +1920,7 @@ type WriteVMXVariableRequest struct {
 func (x *WriteVMXVariableRequest) Reset() {
 	*x = WriteVMXVariableRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[24]
+		mi := &file_openvm_v1_api_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2029,7 +1933,7 @@ func (x *WriteVMXVariableRequest) String() string {
 func (*WriteVMXVariableRequest) ProtoMessage() {}
 
 func (x *WriteVMXVariableRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[24]
+	mi := &file_openvm_v1_api_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2042,7 +1946,7 @@ func (x *WriteVMXVariableRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use WriteVMXVariableRequest.ProtoReflect.Descriptor instead.
 func (*WriteVMXVariableRequest) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{24}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *WriteVMXVariableRequest) GetVmxFilePath() string {
@@ -2072,7 +1976,7 @@ type ReadVMVariableRequest_ReadVMVariableRequestVar struct {
 func (x *ReadVMVariableRequest_ReadVMVariableRequestVar) Reset() {
 	*x = ReadVMVariableRequest_ReadVMVariableRequestVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[25]
+		mi := &file_openvm_v1_api_proto_msgTypes[23]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2085,7 +1989,7 @@ func (x *ReadVMVariableRequest_ReadVMVariableRequestVar) String() string {
 func (*ReadVMVariableRequest_ReadVMVariableRequestVar) ProtoMessage() {}
 
 func (x *ReadVMVariableRequest_ReadVMVariableRequestVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[25]
+	mi := &file_openvm_v1_api_proto_msgTypes[23]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2098,7 +2002,7 @@ func (x *ReadVMVariableRequest_ReadVMVariableRequestVar) ProtoReflect() protoref
 
 // Deprecated: Use ReadVMVariableRequest_ReadVMVariableRequestVar.ProtoReflect.Descriptor instead.
 func (*ReadVMVariableRequest_ReadVMVariableRequestVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{8, 0}
 }
 
 func (x *ReadVMVariableRequest_ReadVMVariableRequestVar) GetName() string {
@@ -2129,7 +2033,7 @@ type ReadVMVariableResponse_ReadVMVariableResponseVar struct {
 func (x *ReadVMVariableResponse_ReadVMVariableResponseVar) Reset() {
 	*x = ReadVMVariableResponse_ReadVMVariableResponseVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[26]
+		mi := &file_openvm_v1_api_proto_msgTypes[24]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2142,7 +2046,7 @@ func (x *ReadVMVariableResponse_ReadVMVariableResponseVar) String() string {
 func (*ReadVMVariableResponse_ReadVMVariableResponseVar) ProtoMessage() {}
 
 func (x *ReadVMVariableResponse_ReadVMVariableResponseVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[26]
+	mi := &file_openvm_v1_api_proto_msgTypes[24]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2155,7 +2059,7 @@ func (x *ReadVMVariableResponse_ReadVMVariableResponseVar) ProtoReflect() protor
 
 // Deprecated: Use ReadVMVariableResponse_ReadVMVariableResponseVar.ProtoReflect.Descriptor instead.
 func (*ReadVMVariableResponse_ReadVMVariableResponseVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{11, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{9, 0}
 }
 
 func (x *ReadVMVariableResponse_ReadVMVariableResponseVar) GetName() string {
@@ -2186,7 +2090,7 @@ type WriteVMVariableRequest_WriteVMVariableRequestVar struct {
 func (x *WriteVMVariableRequest_WriteVMVariableRequestVar) Reset() {
 	*x = WriteVMVariableRequest_WriteVMVariableRequestVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[27]
+		mi := &file_openvm_v1_api_proto_msgTypes[25]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2199,7 +2103,7 @@ func (x *WriteVMVariableRequest_WriteVMVariableRequestVar) String() string {
 func (*WriteVMVariableRequest_WriteVMVariableRequestVar) ProtoMessage() {}
 
 func (x *WriteVMVariableRequest_WriteVMVariableRequestVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[27]
+	mi := &file_openvm_v1_api_proto_msgTypes[25]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2212,7 +2116,7 @@ func (x *WriteVMVariableRequest_WriteVMVariableRequestVar) ProtoReflect() protor
 
 // Deprecated: Use WriteVMVariableRequest_WriteVMVariableRequestVar.ProtoReflect.Descriptor instead.
 func (*WriteVMVariableRequest_WriteVMVariableRequestVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{12, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{10, 0}
 }
 
 func (x *WriteVMVariableRequest_WriteVMVariableRequestVar) GetName() string {
@@ -2249,7 +2153,7 @@ type ListRunningVMsResponse_ListVMsResponseVM struct {
 func (x *ListRunningVMsResponse_ListVMsResponseVM) Reset() {
 	*x = ListRunningVMsResponse_ListVMsResponseVM{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[28]
+		mi := &file_openvm_v1_api_proto_msgTypes[26]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2262,7 +2166,7 @@ func (x *ListRunningVMsResponse_ListVMsResponseVM) String() string {
 func (*ListRunningVMsResponse_ListVMsResponseVM) ProtoMessage() {}
 
 func (x *ListRunningVMsResponse_ListVMsResponseVM) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[28]
+	mi := &file_openvm_v1_api_proto_msgTypes[26]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2275,7 +2179,7 @@ func (x *ListRunningVMsResponse_ListVMsResponseVM) ProtoReflect() protoreflect.M
 
 // Deprecated: Use ListRunningVMsResponse_ListVMsResponseVM.ProtoReflect.Descriptor instead.
 func (*ListRunningVMsResponse_ListVMsResponseVM) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{13, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{11, 0}
 }
 
 func (x *ListRunningVMsResponse_ListVMsResponseVM) GetVmxFilePath() string {
@@ -2297,7 +2201,7 @@ type ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot struct {
 func (x *ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) Reset() {
 	*x = ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[29]
+		mi := &file_openvm_v1_api_proto_msgTypes[27]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2310,7 +2214,7 @@ func (x *ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) String() strin
 func (*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) ProtoMessage() {}
 
 func (x *ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[29]
+	mi := &file_openvm_v1_api_proto_msgTypes[27]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2323,7 +2227,7 @@ func (x *ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) ProtoReflect()
 
 // Deprecated: Use ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot.ProtoReflect.Descriptor instead.
 func (*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{18, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{16, 0}
 }
 
 func (x *ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot) GetName() string {
@@ -2345,7 +2249,7 @@ type ReadVMXVariableRequest_ReadVMXVariableRequestVar struct {
 func (x *ReadVMXVariableRequest_ReadVMXVariableRequestVar) Reset() {
 	*x = ReadVMXVariableRequest_ReadVMXVariableRequestVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[30]
+		mi := &file_openvm_v1_api_proto_msgTypes[28]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2358,7 +2262,7 @@ func (x *ReadVMXVariableRequest_ReadVMXVariableRequestVar) String() string {
 func (*ReadVMXVariableRequest_ReadVMXVariableRequestVar) ProtoMessage() {}
 
 func (x *ReadVMXVariableRequest_ReadVMXVariableRequestVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[30]
+	mi := &file_openvm_v1_api_proto_msgTypes[28]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2371,7 +2275,7 @@ func (x *ReadVMXVariableRequest_ReadVMXVariableRequestVar) ProtoReflect() protor
 
 // Deprecated: Use ReadVMXVariableRequest_ReadVMXVariableRequestVar.ProtoReflect.Descriptor instead.
 func (*ReadVMXVariableRequest_ReadVMXVariableRequestVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{22, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{20, 0}
 }
 
 func (x *ReadVMXVariableRequest_ReadVMXVariableRequestVar) GetName() string {
@@ -2395,7 +2299,7 @@ type ReadVMXVariableResponse_ReadVMXVariableResponseVar struct {
 func (x *ReadVMXVariableResponse_ReadVMXVariableResponseVar) Reset() {
 	*x = ReadVMXVariableResponse_ReadVMXVariableResponseVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[31]
+		mi := &file_openvm_v1_api_proto_msgTypes[29]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2408,7 +2312,7 @@ func (x *ReadVMXVariableResponse_ReadVMXVariableResponseVar) String() string {
 func (*ReadVMXVariableResponse_ReadVMXVariableResponseVar) ProtoMessage() {}
 
 func (x *ReadVMXVariableResponse_ReadVMXVariableResponseVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[31]
+	mi := &file_openvm_v1_api_proto_msgTypes[29]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2421,7 +2325,7 @@ func (x *ReadVMXVariableResponse_ReadVMXVariableResponseVar) ProtoReflect() prot
 
 // Deprecated: Use ReadVMXVariableResponse_ReadVMXVariableResponseVar.ProtoReflect.Descriptor instead.
 func (*ReadVMXVariableResponse_ReadVMXVariableResponseVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{23, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{21, 0}
 }
 
 func (x *ReadVMXVariableResponse_ReadVMXVariableResponseVar) GetName() string {
@@ -2452,7 +2356,7 @@ type WriteVMXVariableRequest_WriteVMXVariableRequestVar struct {
 func (x *WriteVMXVariableRequest_WriteVMXVariableRequestVar) Reset() {
 	*x = WriteVMXVariableRequest_WriteVMXVariableRequestVar{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_openvm_v1_api_proto_msgTypes[32]
+		mi := &file_openvm_v1_api_proto_msgTypes[30]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -2465,7 +2369,7 @@ func (x *WriteVMXVariableRequest_WriteVMXVariableRequestVar) String() string {
 func (*WriteVMXVariableRequest_WriteVMXVariableRequestVar) ProtoMessage() {}
 
 func (x *WriteVMXVariableRequest_WriteVMXVariableRequestVar) ProtoReflect() protoreflect.Message {
-	mi := &file_openvm_v1_api_proto_msgTypes[32]
+	mi := &file_openvm_v1_api_proto_msgTypes[30]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2478,7 +2382,7 @@ func (x *WriteVMXVariableRequest_WriteVMXVariableRequestVar) ProtoReflect() prot
 
 // Deprecated: Use WriteVMXVariableRequest_WriteVMXVariableRequestVar.ProtoReflect.Descriptor instead.
 func (*WriteVMXVariableRequest_WriteVMXVariableRequestVar) Descriptor() ([]byte, []int) {
-	return file_openvm_v1_api_proto_rawDescGZIP(), []int{24, 0}
+	return file_openvm_v1_api_proto_rawDescGZIP(), []int{22, 0}
 }
 
 func (x *WriteVMXVariableRequest_WriteVMXVariableRequestVar) GetName() string {
@@ -2515,14 +2419,7 @@ var file_openvm_v1_api_proto_rawDesc = []byte{
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x76, 0x6d, 0x78, 0x46, 0x69,
 	0x6c, 0x65, 0x50, 0x61, 0x74, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x76, 0x6d,
 	0x78, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x61, 0x74, 0x68, 0x22, 0x11, 0x0a, 0x0f, 0x47, 0x65, 0x6e,
-	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x35, 0x0a, 0x11,
-	0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x20, 0x0a, 0x0b, 0x76, 0x6d, 0x78, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x61, 0x74, 0x68,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x76, 0x6d, 0x78, 0x46, 0x69, 0x6c, 0x65, 0x50,
-	0x61, 0x74, 0x68, 0x22, 0x37, 0x0a, 0x13, 0x55, 0x6e, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65,
-	0x72, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x20, 0x0a, 0x0b, 0x76, 0x6d,
-	0x78, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x61, 0x74, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0b, 0x76, 0x6d, 0x78, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x61, 0x74, 0x68, 0x22, 0xd0, 0x01, 0x0a,
+	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xd0, 0x01, 0x0a,
 	0x0e, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
 	0x26, 0x0a, 0x0e, 0x76, 0x6d, 0x78, 0x46, 0x69, 0x6c, 0x65, 0x50, 0x61, 0x74, 0x68, 0x53, 0x72,
 	0x63, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x76, 0x6d, 0x78, 0x46, 0x69, 0x6c, 0x65,
@@ -2792,119 +2689,110 @@ var file_openvm_v1_api_proto_rawDesc = []byte{
 	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x56, 0x61, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x6e, 0x61, 0x6d,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6e, 0x61, 0x6d, 0x65, 0x12, 0x14, 0x0a,
 	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61,
-	0x6c, 0x75, 0x65, 0x32, 0xc9, 0x0d, 0x0a, 0x0a, 0x41, 0x70, 0x69, 0x53, 0x65, 0x72, 0x76, 0x69,
-	0x63, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x4d,
-	0x12, 0x1c, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x67,
-	0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a,
+	0x6c, 0x75, 0x65, 0x32, 0xb1, 0x0c, 0x0a, 0x0a, 0x41, 0x70, 0x69, 0x53, 0x65, 0x72, 0x76, 0x69,
+	0x63, 0x65, 0x12, 0x42, 0x0a, 0x07, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x56, 0x4d, 0x12, 0x19, 0x2e,
+	0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x56,
+	0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
+	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x08, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65,
+	0x56, 0x4d, 0x12, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44,
+	0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a,
 	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
-	0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4c, 0x0a, 0x0c,
-	0x55, 0x6e, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x56, 0x4d, 0x12, 0x1e, 0x2e, 0x6f,
-	0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x55, 0x6e, 0x72, 0x65, 0x67, 0x69, 0x73,
-	0x74, 0x65, 0x72, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f,
+	0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x07,
+	0x50, 0x61, 0x75, 0x73, 0x65, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x43, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x75, 0x6d, 0x65, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f,
 	0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x07, 0x43, 0x6c,
-	0x6f, 0x6e, 0x65, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
-	0x31, 0x2e, 0x43, 0x6c, 0x6f, 0x6e, 0x65, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e,
-	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44,
-	0x0a, 0x08, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x4d, 0x12, 0x1a, 0x2e, 0x6f, 0x70, 0x65,
-	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x56, 0x4d, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x07, 0x50, 0x61, 0x75, 0x73, 0x65, 0x56, 0x4d, 0x12,
-	0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65,
-	0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65,
-	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x43, 0x0a, 0x08, 0x52, 0x65, 0x73, 0x75,
-	0x6d, 0x65, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65,
-	0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x48, 0x0a,
-	0x0a, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x66, 0x66, 0x56, 0x4d, 0x12, 0x1c, 0x2e, 0x6f, 0x70,
-	0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x66, 0x66,
-	0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e,
-	0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x46, 0x0a, 0x09, 0x50, 0x6f, 0x77, 0x65, 0x72,
-	0x4f, 0x6e, 0x56, 0x4d, 0x12, 0x1b, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31,
-	0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x6e, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d,
+	0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x48, 0x0a, 0x0a, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x66,
+	0x66, 0x56, 0x4d, 0x12, 0x1c, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
+	0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x66, 0x66, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
 	0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
 	0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12,
-	0x42, 0x0a, 0x07, 0x52, 0x65, 0x73, 0x65, 0x74, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65,
-	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x73, 0x65, 0x74, 0x56, 0x4d, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
-	0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x09, 0x53, 0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x56, 0x4d,
-	0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e,
-	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70,
-	0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x57, 0x0a, 0x0e, 0x52, 0x65, 0x61,
-	0x64, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x20, 0x2e, 0x6f, 0x70,
-	0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x56, 0x61,
-	0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e,
-	0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d,
-	0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x52, 0x0a, 0x0f, 0x57, 0x72, 0x69, 0x74, 0x65, 0x56, 0x4d, 0x56, 0x61, 0x72,
-	0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
-	0x31, 0x2e, 0x57, 0x72, 0x69, 0x74, 0x65, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c,
-	0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
-	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4c, 0x0a, 0x11, 0x55, 0x70, 0x67, 0x72, 0x61, 0x64,
-	0x65, 0x56, 0x4d, 0x48, 0x61, 0x72, 0x64, 0x77, 0x61, 0x72, 0x65, 0x12, 0x19, 0x2e, 0x6f, 0x70,
-	0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x22, 0x00, 0x12, 0x50, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6e, 0x6e,
-	0x69, 0x6e, 0x67, 0x56, 0x4d, 0x73, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
-	0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69,
-	0x73, 0x74, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x56, 0x4d, 0x73, 0x52, 0x65, 0x73, 0x70,
-	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x08, 0x56, 0x4d, 0x44, 0x65, 0x74, 0x61,
-	0x69, 0x6c, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
-	0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e,
-	0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x4d, 0x44, 0x65, 0x74, 0x61,
-	0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x10,
-	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74,
-	0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31,
-	0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0x00, 0x12, 0x54, 0x0a, 0x10, 0x52, 0x65, 0x76, 0x65, 0x72, 0x74, 0x56, 0x4d, 0x53, 0x6e,
-	0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
-	0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x65, 0x72, 0x74, 0x54, 0x6f, 0x53, 0x6e, 0x61, 0x70, 0x73,
-	0x68, 0x6f, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65,
-	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65,
-	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x10, 0x52, 0x65, 0x6d, 0x6f,
-	0x76, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x12, 0x22, 0x2e, 0x6f,
-	0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x56,
-	0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e,
-	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5d,
-	0x0a, 0x10, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x44, 0x65, 0x74, 0x61,
-	0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56,
-	0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
-	0x76, 0x31, 0x2e, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x44, 0x65, 0x74,
-	0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4e, 0x0a,
-	0x0d, 0x56, 0x4d, 0x58, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x65, 0x64, 0x12, 0x19,
-	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
-	0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x6f, 0x70, 0x65, 0x6e,
-	0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x4d, 0x58, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65,
-	0x72, 0x65, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5a, 0x0a,
-	0x0f, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65,
-	0x12, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61,
-	0x64, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75,
-	0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
-	0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x10, 0x57, 0x72, 0x69,
-	0x74, 0x65, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x22, 0x2e,
+	0x46, 0x0a, 0x09, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x6e, 0x56, 0x4d, 0x12, 0x1b, 0x2e, 0x6f,
+	0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x50, 0x6f, 0x77, 0x65, 0x72, 0x4f, 0x6e,
+	0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e,
+	0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x42, 0x0a, 0x07, 0x52, 0x65, 0x73, 0x65, 0x74,
+	0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52,
+	0x65, 0x73, 0x65, 0x74, 0x56, 0x4d, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e,
+	0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69,
+	0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44, 0x0a, 0x09, 0x53,
+	0x75, 0x73, 0x70, 0x65, 0x6e, 0x64, 0x56, 0x4d, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
+	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x57, 0x0a, 0x0e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61,
+	0x62, 0x6c, 0x65, 0x12, 0x20, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
+	0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
+	0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x52, 0x0a, 0x0f, 0x57, 0x72,
+	0x69, 0x74, 0x65, 0x56, 0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x21, 0x2e,
 	0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x57, 0x72, 0x69, 0x74, 0x65, 0x56,
-	0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65,
-	0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42,
-	0x34, 0x5a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70,
-	0x65, 0x6e, 0x76, 0x6d, 0x2d, 0x68, 0x74, 0x74, 0x70, 0x2f, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d,
-	0x2d, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x65, 0x6e, 0x2f, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2f,
-	0x76, 0x31, 0x3b, 0x76, 0x31, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x4d, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e,
+	0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4c,
+	0x0a, 0x11, 0x55, 0x70, 0x67, 0x72, 0x61, 0x64, 0x65, 0x56, 0x4d, 0x48, 0x61, 0x72, 0x64, 0x77,
+	0x61, 0x72, 0x65, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e,
+	0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a,
+	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
+	0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x50, 0x0a, 0x0e,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e, 0x67, 0x56, 0x4d, 0x73, 0x12, 0x19,
+	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72,
+	0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e,
+	0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x75, 0x6e, 0x6e, 0x69, 0x6e,
+	0x67, 0x56, 0x4d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x44,
+	0x0a, 0x08, 0x56, 0x4d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65,
+	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65,
+	0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1b, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
+	0x31, 0x2e, 0x56, 0x4d, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x4d,
+	0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
+	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61,
+	0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f,
+	0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x54, 0x0a, 0x10, 0x52, 0x65,
+	0x76, 0x65, 0x72, 0x74, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x12, 0x22,
+	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x76, 0x65, 0x72,
+	0x74, 0x54, 0x6f, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
+	0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47,
+	0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x54, 0x0a, 0x10, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70,
+	0x73, 0x68, 0x6f, 0x74, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31,
+	0x2e, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
+	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5d, 0x0a, 0x10, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70,
+	0x73, 0x68, 0x6f, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65,
+	0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x4d, 0x53, 0x6e, 0x61, 0x70, 0x73, 0x68, 0x6f,
+	0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x23,
+	0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x4d, 0x53, 0x6e, 0x61,
+	0x70, 0x73, 0x68, 0x6f, 0x74, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x4e, 0x0a, 0x0d, 0x56, 0x4d, 0x58, 0x52, 0x65, 0x67, 0x69,
+	0x73, 0x74, 0x65, 0x72, 0x65, 0x64, 0x12, 0x19, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e,
+	0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x1a, 0x20, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x56, 0x4d,
+	0x58, 0x52, 0x65, 0x67, 0x69, 0x73, 0x74, 0x65, 0x72, 0x65, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x00, 0x12, 0x5a, 0x0a, 0x0f, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x58,
+	0x56, 0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x21, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76,
+	0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69,
+	0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x22, 0x2e, 0x6f, 0x70,
+	0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x52, 0x65, 0x61, 0x64, 0x56, 0x4d, 0x58, 0x56,
+	0x61, 0x72, 0x69, 0x61, 0x62, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x00, 0x12, 0x54, 0x0a, 0x10, 0x57, 0x72, 0x69, 0x74, 0x65, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72,
+	0x69, 0x61, 0x62, 0x6c, 0x65, 0x12, 0x22, 0x2e, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2e, 0x76,
+	0x31, 0x2e, 0x57, 0x72, 0x69, 0x74, 0x65, 0x56, 0x4d, 0x58, 0x56, 0x61, 0x72, 0x69, 0x61, 0x62,
+	0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x1a, 0x2e, 0x6f, 0x70, 0x65, 0x6e,
+	0x76, 0x6d, 0x2e, 0x76, 0x31, 0x2e, 0x47, 0x65, 0x6e, 0x65, 0x72, 0x69, 0x63, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x34, 0x5a, 0x32, 0x67, 0x69, 0x74, 0x68, 0x75,
+	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2d, 0x68, 0x74, 0x74,
+	0x70, 0x2f, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2d, 0x61, 0x70, 0x69, 0x2f, 0x67, 0x65, 0x6e,
+	0x2f, 0x6f, 0x70, 0x65, 0x6e, 0x76, 0x6d, 0x2f, 0x76, 0x31, 0x3b, 0x76, 0x31, 0x62, 0x06, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -2920,7 +2808,7 @@ func file_openvm_v1_api_proto_rawDescGZIP() []byte {
 }
 
 var file_openvm_v1_api_proto_enumTypes = make([]protoimpl.EnumInfo, 12)
-var file_openvm_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 33)
+var file_openvm_v1_api_proto_msgTypes = make([]protoimpl.MessageInfo, 31)
 var file_openvm_v1_api_proto_goTypes = []any{
 	(ErrDetail_ErrDetailModule)(0),                                                      // 0: openvm.v1.ErrDetail.ErrDetailModule
 	(CloneVMRequest_CloneVMRequestType)(0),                                              // 1: openvm.v1.CloneVMRequest.CloneVMRequestType
@@ -2937,36 +2825,34 @@ var file_openvm_v1_api_proto_goTypes = []any{
 	(*ErrDetail)(nil),                                               // 12: openvm.v1.ErrDetail
 	(*GenericRequest)(nil),                                          // 13: openvm.v1.GenericRequest
 	(*GenericResponse)(nil),                                         // 14: openvm.v1.GenericResponse
-	(*RegisterVMRequest)(nil),                                       // 15: openvm.v1.RegisterVMRequest
-	(*UnregisterVMRequest)(nil),                                     // 16: openvm.v1.UnregisterVMRequest
-	(*CloneVMRequest)(nil),                                          // 17: openvm.v1.CloneVMRequest
-	(*DeleteVMRequest)(nil),                                         // 18: openvm.v1.DeleteVMRequest
-	(*PowerOffVMRequest)(nil),                                       // 19: openvm.v1.PowerOffVMRequest
-	(*PowerOnVMRequest)(nil),                                        // 20: openvm.v1.PowerOnVMRequest
-	(*ResetVMRequest)(nil),                                          // 21: openvm.v1.ResetVMRequest
-	(*ReadVMVariableRequest)(nil),                                   // 22: openvm.v1.ReadVMVariableRequest
-	(*ReadVMVariableResponse)(nil),                                  // 23: openvm.v1.ReadVMVariableResponse
-	(*WriteVMVariableRequest)(nil),                                  // 24: openvm.v1.WriteVMVariableRequest
-	(*ListRunningVMsResponse)(nil),                                  // 25: openvm.v1.ListRunningVMsResponse
-	(*VMDetailResponse)(nil),                                        // 26: openvm.v1.VMDetailResponse
-	(*CreateVMSnapshotRequest)(nil),                                 // 27: openvm.v1.CreateVMSnapshotRequest
-	(*RevertToSnapshotRequest)(nil),                                 // 28: openvm.v1.RevertToSnapshotRequest
-	(*RemoveVMSnapshotRequest)(nil),                                 // 29: openvm.v1.RemoveVMSnapshotRequest
-	(*ListVMSnapshotsResponse)(nil),                                 // 30: openvm.v1.ListVMSnapshotsResponse
-	(*VMSnapshotDetailRequest)(nil),                                 // 31: openvm.v1.VMSnapshotDetailRequest
-	(*VMSnapshotDetailResponse)(nil),                                // 32: openvm.v1.VMSnapshotDetailResponse
-	(*VMXRegisteredResponse)(nil),                                   // 33: openvm.v1.VMXRegisteredResponse
-	(*ReadVMXVariableRequest)(nil),                                  // 34: openvm.v1.ReadVMXVariableRequest
-	(*ReadVMXVariableResponse)(nil),                                 // 35: openvm.v1.ReadVMXVariableResponse
-	(*WriteVMXVariableRequest)(nil),                                 // 36: openvm.v1.WriteVMXVariableRequest
-	(*ReadVMVariableRequest_ReadVMVariableRequestVar)(nil),          // 37: openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar
-	(*ReadVMVariableResponse_ReadVMVariableResponseVar)(nil),        // 38: openvm.v1.ReadVMVariableResponse.ReadVMVariableResponseVar
-	(*WriteVMVariableRequest_WriteVMVariableRequestVar)(nil),        // 39: openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar
-	(*ListRunningVMsResponse_ListVMsResponseVM)(nil),                // 40: openvm.v1.ListRunningVMsResponse.ListVMsResponseVM
-	(*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot)(nil), // 41: openvm.v1.ListVMSnapshotsResponse.ListVMSnapshotsResponseSnapshot
-	(*ReadVMXVariableRequest_ReadVMXVariableRequestVar)(nil),        // 42: openvm.v1.ReadVMXVariableRequest.ReadVMXVariableRequestVar
-	(*ReadVMXVariableResponse_ReadVMXVariableResponseVar)(nil),      // 43: openvm.v1.ReadVMXVariableResponse.ReadVMXVariableResponseVar
-	(*WriteVMXVariableRequest_WriteVMXVariableRequestVar)(nil),      // 44: openvm.v1.WriteVMXVariableRequest.WriteVMXVariableRequestVar
+	(*CloneVMRequest)(nil),                                          // 15: openvm.v1.CloneVMRequest
+	(*DeleteVMRequest)(nil),                                         // 16: openvm.v1.DeleteVMRequest
+	(*PowerOffVMRequest)(nil),                                       // 17: openvm.v1.PowerOffVMRequest
+	(*PowerOnVMRequest)(nil),                                        // 18: openvm.v1.PowerOnVMRequest
+	(*ResetVMRequest)(nil),                                          // 19: openvm.v1.ResetVMRequest
+	(*ReadVMVariableRequest)(nil),                                   // 20: openvm.v1.ReadVMVariableRequest
+	(*ReadVMVariableResponse)(nil),                                  // 21: openvm.v1.ReadVMVariableResponse
+	(*WriteVMVariableRequest)(nil),                                  // 22: openvm.v1.WriteVMVariableRequest
+	(*ListRunningVMsResponse)(nil),                                  // 23: openvm.v1.ListRunningVMsResponse
+	(*VMDetailResponse)(nil),                                        // 24: openvm.v1.VMDetailResponse
+	(*CreateVMSnapshotRequest)(nil),                                 // 25: openvm.v1.CreateVMSnapshotRequest
+	(*RevertToSnapshotRequest)(nil),                                 // 26: openvm.v1.RevertToSnapshotRequest
+	(*RemoveVMSnapshotRequest)(nil),                                 // 27: openvm.v1.RemoveVMSnapshotRequest
+	(*ListVMSnapshotsResponse)(nil),                                 // 28: openvm.v1.ListVMSnapshotsResponse
+	(*VMSnapshotDetailRequest)(nil),                                 // 29: openvm.v1.VMSnapshotDetailRequest
+	(*VMSnapshotDetailResponse)(nil),                                // 30: openvm.v1.VMSnapshotDetailResponse
+	(*VMXRegisteredResponse)(nil),                                   // 31: openvm.v1.VMXRegisteredResponse
+	(*ReadVMXVariableRequest)(nil),                                  // 32: openvm.v1.ReadVMXVariableRequest
+	(*ReadVMXVariableResponse)(nil),                                 // 33: openvm.v1.ReadVMXVariableResponse
+	(*WriteVMXVariableRequest)(nil),                                 // 34: openvm.v1.WriteVMXVariableRequest
+	(*ReadVMVariableRequest_ReadVMVariableRequestVar)(nil),          // 35: openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar
+	(*ReadVMVariableResponse_ReadVMVariableResponseVar)(nil),        // 36: openvm.v1.ReadVMVariableResponse.ReadVMVariableResponseVar
+	(*WriteVMVariableRequest_WriteVMVariableRequestVar)(nil),        // 37: openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar
+	(*ListRunningVMsResponse_ListVMsResponseVM)(nil),                // 38: openvm.v1.ListRunningVMsResponse.ListVMsResponseVM
+	(*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot)(nil), // 39: openvm.v1.ListVMSnapshotsResponse.ListVMSnapshotsResponseSnapshot
+	(*ReadVMXVariableRequest_ReadVMXVariableRequestVar)(nil),        // 40: openvm.v1.ReadVMXVariableRequest.ReadVMXVariableRequestVar
+	(*ReadVMXVariableResponse_ReadVMXVariableResponseVar)(nil),      // 41: openvm.v1.ReadVMXVariableResponse.ReadVMXVariableResponseVar
+	(*WriteVMXVariableRequest_WriteVMXVariableRequestVar)(nil),      // 42: openvm.v1.WriteVMXVariableRequest.WriteVMXVariableRequestVar
 }
 var file_openvm_v1_api_proto_depIdxs = []int32{
 	0,  // 0: openvm.v1.ErrDetail.module:type_name -> openvm.v1.ErrDetail.ErrDetailModule
@@ -2975,66 +2861,62 @@ var file_openvm_v1_api_proto_depIdxs = []int32{
 	3,  // 3: openvm.v1.PowerOffVMRequest.type:type_name -> openvm.v1.PowerOffVMRequest.PowerOffVMRequestType
 	4,  // 4: openvm.v1.PowerOnVMRequest.type:type_name -> openvm.v1.PowerOnVMRequest.PowerOnVMRequestType
 	5,  // 5: openvm.v1.ResetVMRequest.type:type_name -> openvm.v1.ResetVMRequest.ResetVMRequestType
-	37, // 6: openvm.v1.ReadVMVariableRequest.vars:type_name -> openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar
-	38, // 7: openvm.v1.ReadVMVariableResponse.vars:type_name -> openvm.v1.ReadVMVariableResponse.ReadVMVariableResponseVar
-	39, // 8: openvm.v1.WriteVMVariableRequest.vars:type_name -> openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar
-	40, // 9: openvm.v1.ListRunningVMsResponse.vms:type_name -> openvm.v1.ListRunningVMsResponse.ListVMsResponseVM
+	35, // 6: openvm.v1.ReadVMVariableRequest.vars:type_name -> openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar
+	36, // 7: openvm.v1.ReadVMVariableResponse.vars:type_name -> openvm.v1.ReadVMVariableResponse.ReadVMVariableResponseVar
+	37, // 8: openvm.v1.WriteVMVariableRequest.vars:type_name -> openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar
+	38, // 9: openvm.v1.ListRunningVMsResponse.vms:type_name -> openvm.v1.ListRunningVMsResponse.ListVMsResponseVM
 	8,  // 10: openvm.v1.VMDetailResponse.powerStatus:type_name -> openvm.v1.VMDetailResponse.VMDetailResponsePowerStatus
 	9,  // 11: openvm.v1.VMDetailResponse.vmToolsStatus:type_name -> openvm.v1.VMDetailResponse.VMDetailResponseVmToolsStatus
 	10, // 12: openvm.v1.CreateVMSnapshotRequest.type:type_name -> openvm.v1.CreateVMSnapshotRequest.CreateVMSnapshotType
 	11, // 13: openvm.v1.RemoveVMSnapshotRequest.type:type_name -> openvm.v1.RemoveVMSnapshotRequest.CreateVMSnapshotType
-	41, // 14: openvm.v1.ListVMSnapshotsResponse.snapshots:type_name -> openvm.v1.ListVMSnapshotsResponse.ListVMSnapshotsResponseSnapshot
-	42, // 15: openvm.v1.ReadVMXVariableRequest.vars:type_name -> openvm.v1.ReadVMXVariableRequest.ReadVMXVariableRequestVar
-	43, // 16: openvm.v1.ReadVMXVariableResponse.vars:type_name -> openvm.v1.ReadVMXVariableResponse.ReadVMXVariableResponseVar
-	44, // 17: openvm.v1.WriteVMXVariableRequest.vars:type_name -> openvm.v1.WriteVMXVariableRequest.WriteVMXVariableRequestVar
+	39, // 14: openvm.v1.ListVMSnapshotsResponse.snapshots:type_name -> openvm.v1.ListVMSnapshotsResponse.ListVMSnapshotsResponseSnapshot
+	40, // 15: openvm.v1.ReadVMXVariableRequest.vars:type_name -> openvm.v1.ReadVMXVariableRequest.ReadVMXVariableRequestVar
+	41, // 16: openvm.v1.ReadVMXVariableResponse.vars:type_name -> openvm.v1.ReadVMXVariableResponse.ReadVMXVariableResponseVar
+	42, // 17: openvm.v1.WriteVMXVariableRequest.vars:type_name -> openvm.v1.WriteVMXVariableRequest.WriteVMXVariableRequestVar
 	6,  // 18: openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar.type:type_name -> openvm.v1.ReadVMVariableRequest.ReadVMVariableRequestVar.ReadVMVariableRequestVarType
 	7,  // 19: openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar.type:type_name -> openvm.v1.WriteVMVariableRequest.WriteVMVariableRequestVar.WriteVMVariableRequestVarType
-	15, // 20: openvm.v1.ApiService.RegisterVM:input_type -> openvm.v1.RegisterVMRequest
-	16, // 21: openvm.v1.ApiService.UnregisterVM:input_type -> openvm.v1.UnregisterVMRequest
-	17, // 22: openvm.v1.ApiService.CloneVM:input_type -> openvm.v1.CloneVMRequest
-	18, // 23: openvm.v1.ApiService.DeleteVM:input_type -> openvm.v1.DeleteVMRequest
-	13, // 24: openvm.v1.ApiService.PauseVM:input_type -> openvm.v1.GenericRequest
-	13, // 25: openvm.v1.ApiService.ResumeVM:input_type -> openvm.v1.GenericRequest
-	19, // 26: openvm.v1.ApiService.PowerOffVM:input_type -> openvm.v1.PowerOffVMRequest
-	20, // 27: openvm.v1.ApiService.PowerOnVM:input_type -> openvm.v1.PowerOnVMRequest
-	21, // 28: openvm.v1.ApiService.ResetVM:input_type -> openvm.v1.ResetVMRequest
-	13, // 29: openvm.v1.ApiService.SuspendVM:input_type -> openvm.v1.GenericRequest
-	22, // 30: openvm.v1.ApiService.ReadVMVariable:input_type -> openvm.v1.ReadVMVariableRequest
-	24, // 31: openvm.v1.ApiService.WriteVMVariable:input_type -> openvm.v1.WriteVMVariableRequest
-	13, // 32: openvm.v1.ApiService.UpgradeVMHardware:input_type -> openvm.v1.GenericRequest
-	13, // 33: openvm.v1.ApiService.ListRunningVMs:input_type -> openvm.v1.GenericRequest
-	13, // 34: openvm.v1.ApiService.VMDetail:input_type -> openvm.v1.GenericRequest
-	27, // 35: openvm.v1.ApiService.CreateVMSnapshot:input_type -> openvm.v1.CreateVMSnapshotRequest
-	28, // 36: openvm.v1.ApiService.RevertVMSnapshot:input_type -> openvm.v1.RevertToSnapshotRequest
-	29, // 37: openvm.v1.ApiService.RemoveVMSnapshot:input_type -> openvm.v1.RemoveVMSnapshotRequest
-	31, // 38: openvm.v1.ApiService.VMSnapshotDetail:input_type -> openvm.v1.VMSnapshotDetailRequest
-	13, // 39: openvm.v1.ApiService.VMXRegistered:input_type -> openvm.v1.GenericRequest
-	34, // 40: openvm.v1.ApiService.ReadVMXVariable:input_type -> openvm.v1.ReadVMXVariableRequest
-	36, // 41: openvm.v1.ApiService.WriteVMXVariable:input_type -> openvm.v1.WriteVMXVariableRequest
-	14, // 42: openvm.v1.ApiService.RegisterVM:output_type -> openvm.v1.GenericResponse
-	14, // 43: openvm.v1.ApiService.UnregisterVM:output_type -> openvm.v1.GenericResponse
-	14, // 44: openvm.v1.ApiService.CloneVM:output_type -> openvm.v1.GenericResponse
-	14, // 45: openvm.v1.ApiService.DeleteVM:output_type -> openvm.v1.GenericResponse
-	14, // 46: openvm.v1.ApiService.PauseVM:output_type -> openvm.v1.GenericResponse
-	14, // 47: openvm.v1.ApiService.ResumeVM:output_type -> openvm.v1.GenericResponse
-	14, // 48: openvm.v1.ApiService.PowerOffVM:output_type -> openvm.v1.GenericResponse
-	14, // 49: openvm.v1.ApiService.PowerOnVM:output_type -> openvm.v1.GenericResponse
-	14, // 50: openvm.v1.ApiService.ResetVM:output_type -> openvm.v1.GenericResponse
-	14, // 51: openvm.v1.ApiService.SuspendVM:output_type -> openvm.v1.GenericResponse
-	23, // 52: openvm.v1.ApiService.ReadVMVariable:output_type -> openvm.v1.ReadVMVariableResponse
-	14, // 53: openvm.v1.ApiService.WriteVMVariable:output_type -> openvm.v1.GenericResponse
-	14, // 54: openvm.v1.ApiService.UpgradeVMHardware:output_type -> openvm.v1.GenericResponse
-	25, // 55: openvm.v1.ApiService.ListRunningVMs:output_type -> openvm.v1.ListRunningVMsResponse
-	26, // 56: openvm.v1.ApiService.VMDetail:output_type -> openvm.v1.VMDetailResponse
-	14, // 57: openvm.v1.ApiService.CreateVMSnapshot:output_type -> openvm.v1.GenericResponse
-	14, // 58: openvm.v1.ApiService.RevertVMSnapshot:output_type -> openvm.v1.GenericResponse
-	14, // 59: openvm.v1.ApiService.RemoveVMSnapshot:output_type -> openvm.v1.GenericResponse
-	32, // 60: openvm.v1.ApiService.VMSnapshotDetail:output_type -> openvm.v1.VMSnapshotDetailResponse
-	33, // 61: openvm.v1.ApiService.VMXRegistered:output_type -> openvm.v1.VMXRegisteredResponse
-	35, // 62: openvm.v1.ApiService.ReadVMXVariable:output_type -> openvm.v1.ReadVMXVariableResponse
-	14, // 63: openvm.v1.ApiService.WriteVMXVariable:output_type -> openvm.v1.GenericResponse
-	42, // [42:64] is the sub-list for method output_type
-	20, // [20:42] is the sub-list for method input_type
+	15, // 20: openvm.v1.ApiService.CloneVM:input_type -> openvm.v1.CloneVMRequest
+	16, // 21: openvm.v1.ApiService.DeleteVM:input_type -> openvm.v1.DeleteVMRequest
+	13, // 22: openvm.v1.ApiService.PauseVM:input_type -> openvm.v1.GenericRequest
+	13, // 23: openvm.v1.ApiService.ResumeVM:input_type -> openvm.v1.GenericRequest
+	17, // 24: openvm.v1.ApiService.PowerOffVM:input_type -> openvm.v1.PowerOffVMRequest
+	18, // 25: openvm.v1.ApiService.PowerOnVM:input_type -> openvm.v1.PowerOnVMRequest
+	19, // 26: openvm.v1.ApiService.ResetVM:input_type -> openvm.v1.ResetVMRequest
+	13, // 27: openvm.v1.ApiService.SuspendVM:input_type -> openvm.v1.GenericRequest
+	20, // 28: openvm.v1.ApiService.ReadVMVariable:input_type -> openvm.v1.ReadVMVariableRequest
+	22, // 29: openvm.v1.ApiService.WriteVMVariable:input_type -> openvm.v1.WriteVMVariableRequest
+	13, // 30: openvm.v1.ApiService.UpgradeVMHardware:input_type -> openvm.v1.GenericRequest
+	13, // 31: openvm.v1.ApiService.ListRunningVMs:input_type -> openvm.v1.GenericRequest
+	13, // 32: openvm.v1.ApiService.VMDetail:input_type -> openvm.v1.GenericRequest
+	25, // 33: openvm.v1.ApiService.CreateVMSnapshot:input_type -> openvm.v1.CreateVMSnapshotRequest
+	26, // 34: openvm.v1.ApiService.RevertVMSnapshot:input_type -> openvm.v1.RevertToSnapshotRequest
+	27, // 35: openvm.v1.ApiService.RemoveVMSnapshot:input_type -> openvm.v1.RemoveVMSnapshotRequest
+	29, // 36: openvm.v1.ApiService.VMSnapshotDetail:input_type -> openvm.v1.VMSnapshotDetailRequest
+	13, // 37: openvm.v1.ApiService.VMXRegistered:input_type -> openvm.v1.GenericRequest
+	32, // 38: openvm.v1.ApiService.ReadVMXVariable:input_type -> openvm.v1.ReadVMXVariableRequest
+	34, // 39: openvm.v1.ApiService.WriteVMXVariable:input_type -> openvm.v1.WriteVMXVariableRequest
+	14, // 40: openvm.v1.ApiService.CloneVM:output_type -> openvm.v1.GenericResponse
+	14, // 41: openvm.v1.ApiService.DeleteVM:output_type -> openvm.v1.GenericResponse
+	14, // 42: openvm.v1.ApiService.PauseVM:output_type -> openvm.v1.GenericResponse
+	14, // 43: openvm.v1.ApiService.ResumeVM:output_type -> openvm.v1.GenericResponse
+	14, // 44: openvm.v1.ApiService.PowerOffVM:output_type -> openvm.v1.GenericResponse
+	14, // 45: openvm.v1.ApiService.PowerOnVM:output_type -> openvm.v1.GenericResponse
+	14, // 46: openvm.v1.ApiService.ResetVM:output_type -> openvm.v1.GenericResponse
+	14, // 47: openvm.v1.ApiService.SuspendVM:output_type -> openvm.v1.GenericResponse
+	21, // 48: openvm.v1.ApiService.ReadVMVariable:output_type -> openvm.v1.ReadVMVariableResponse
+	14, // 49: openvm.v1.ApiService.WriteVMVariable:output_type -> openvm.v1.GenericResponse
+	14, // 50: openvm.v1.ApiService.UpgradeVMHardware:output_type -> openvm.v1.GenericResponse
+	23, // 51: openvm.v1.ApiService.ListRunningVMs:output_type -> openvm.v1.ListRunningVMsResponse
+	24, // 52: openvm.v1.ApiService.VMDetail:output_type -> openvm.v1.VMDetailResponse
+	14, // 53: openvm.v1.ApiService.CreateVMSnapshot:output_type -> openvm.v1.GenericResponse
+	14, // 54: openvm.v1.ApiService.RevertVMSnapshot:output_type -> openvm.v1.GenericResponse
+	14, // 55: openvm.v1.ApiService.RemoveVMSnapshot:output_type -> openvm.v1.GenericResponse
+	30, // 56: openvm.v1.ApiService.VMSnapshotDetail:output_type -> openvm.v1.VMSnapshotDetailResponse
+	31, // 57: openvm.v1.ApiService.VMXRegistered:output_type -> openvm.v1.VMXRegisteredResponse
+	33, // 58: openvm.v1.ApiService.ReadVMXVariable:output_type -> openvm.v1.ReadVMXVariableResponse
+	14, // 59: openvm.v1.ApiService.WriteVMXVariable:output_type -> openvm.v1.GenericResponse
+	40, // [40:60] is the sub-list for method output_type
+	20, // [20:40] is the sub-list for method input_type
 	20, // [20:20] is the sub-list for extension type_name
 	20, // [20:20] is the sub-list for extension extendee
 	0,  // [0:20] is the sub-list for field type_name
@@ -3083,30 +2965,6 @@ func file_openvm_v1_api_proto_init() {
 			}
 		}
 		file_openvm_v1_api_proto_msgTypes[3].Exporter = func(v any, i int) any {
-			switch v := v.(*RegisterVMRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_openvm_v1_api_proto_msgTypes[4].Exporter = func(v any, i int) any {
-			switch v := v.(*UnregisterVMRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_openvm_v1_api_proto_msgTypes[5].Exporter = func(v any, i int) any {
 			switch v := v.(*CloneVMRequest); i {
 			case 0:
 				return &v.state
@@ -3118,7 +2976,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[6].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[4].Exporter = func(v any, i int) any {
 			switch v := v.(*DeleteVMRequest); i {
 			case 0:
 				return &v.state
@@ -3130,7 +2988,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[7].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[5].Exporter = func(v any, i int) any {
 			switch v := v.(*PowerOffVMRequest); i {
 			case 0:
 				return &v.state
@@ -3142,7 +3000,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[8].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[6].Exporter = func(v any, i int) any {
 			switch v := v.(*PowerOnVMRequest); i {
 			case 0:
 				return &v.state
@@ -3154,7 +3012,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[9].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[7].Exporter = func(v any, i int) any {
 			switch v := v.(*ResetVMRequest); i {
 			case 0:
 				return &v.state
@@ -3166,7 +3024,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[10].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[8].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMVariableRequest); i {
 			case 0:
 				return &v.state
@@ -3178,7 +3036,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[11].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[9].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMVariableResponse); i {
 			case 0:
 				return &v.state
@@ -3190,7 +3048,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[12].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[10].Exporter = func(v any, i int) any {
 			switch v := v.(*WriteVMVariableRequest); i {
 			case 0:
 				return &v.state
@@ -3202,7 +3060,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[13].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[11].Exporter = func(v any, i int) any {
 			switch v := v.(*ListRunningVMsResponse); i {
 			case 0:
 				return &v.state
@@ -3214,7 +3072,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[14].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[12].Exporter = func(v any, i int) any {
 			switch v := v.(*VMDetailResponse); i {
 			case 0:
 				return &v.state
@@ -3226,7 +3084,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[15].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[13].Exporter = func(v any, i int) any {
 			switch v := v.(*CreateVMSnapshotRequest); i {
 			case 0:
 				return &v.state
@@ -3238,7 +3096,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[16].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[14].Exporter = func(v any, i int) any {
 			switch v := v.(*RevertToSnapshotRequest); i {
 			case 0:
 				return &v.state
@@ -3250,7 +3108,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[17].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[15].Exporter = func(v any, i int) any {
 			switch v := v.(*RemoveVMSnapshotRequest); i {
 			case 0:
 				return &v.state
@@ -3262,7 +3120,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[18].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[16].Exporter = func(v any, i int) any {
 			switch v := v.(*ListVMSnapshotsResponse); i {
 			case 0:
 				return &v.state
@@ -3274,7 +3132,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[19].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[17].Exporter = func(v any, i int) any {
 			switch v := v.(*VMSnapshotDetailRequest); i {
 			case 0:
 				return &v.state
@@ -3286,7 +3144,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[20].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[18].Exporter = func(v any, i int) any {
 			switch v := v.(*VMSnapshotDetailResponse); i {
 			case 0:
 				return &v.state
@@ -3298,7 +3156,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[21].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[19].Exporter = func(v any, i int) any {
 			switch v := v.(*VMXRegisteredResponse); i {
 			case 0:
 				return &v.state
@@ -3310,7 +3168,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[22].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[20].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMXVariableRequest); i {
 			case 0:
 				return &v.state
@@ -3322,7 +3180,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[23].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[21].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMXVariableResponse); i {
 			case 0:
 				return &v.state
@@ -3334,7 +3192,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[24].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[22].Exporter = func(v any, i int) any {
 			switch v := v.(*WriteVMXVariableRequest); i {
 			case 0:
 				return &v.state
@@ -3346,7 +3204,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[25].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[23].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMVariableRequest_ReadVMVariableRequestVar); i {
 			case 0:
 				return &v.state
@@ -3358,7 +3216,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[26].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[24].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMVariableResponse_ReadVMVariableResponseVar); i {
 			case 0:
 				return &v.state
@@ -3370,7 +3228,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[27].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[25].Exporter = func(v any, i int) any {
 			switch v := v.(*WriteVMVariableRequest_WriteVMVariableRequestVar); i {
 			case 0:
 				return &v.state
@@ -3382,7 +3240,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[28].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[26].Exporter = func(v any, i int) any {
 			switch v := v.(*ListRunningVMsResponse_ListVMsResponseVM); i {
 			case 0:
 				return &v.state
@@ -3394,7 +3252,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[29].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[27].Exporter = func(v any, i int) any {
 			switch v := v.(*ListVMSnapshotsResponse_ListVMSnapshotsResponseSnapshot); i {
 			case 0:
 				return &v.state
@@ -3406,7 +3264,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[30].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[28].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMXVariableRequest_ReadVMXVariableRequestVar); i {
 			case 0:
 				return &v.state
@@ -3418,7 +3276,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[31].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[29].Exporter = func(v any, i int) any {
 			switch v := v.(*ReadVMXVariableResponse_ReadVMXVariableResponseVar); i {
 			case 0:
 				return &v.state
@@ -3430,7 +3288,7 @@ func file_openvm_v1_api_proto_init() {
 				return nil
 			}
 		}
-		file_openvm_v1_api_proto_msgTypes[32].Exporter = func(v any, i int) any {
+		file_openvm_v1_api_proto_msgTypes[30].Exporter = func(v any, i int) any {
 			switch v := v.(*WriteVMXVariableRequest_WriteVMXVariableRequestVar); i {
 			case 0:
 				return &v.state
@@ -3449,7 +3307,7 @@ func file_openvm_v1_api_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_openvm_v1_api_proto_rawDesc,
 			NumEnums:      12,
-			NumMessages:   33,
+			NumMessages:   31,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

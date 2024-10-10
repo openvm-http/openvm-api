@@ -16,62 +16,6 @@ import (
 
 type ApiServer struct{}
 
-// RegisterVM 注册虚拟机
-func (s *ApiServer) RegisterVM(ctx context.Context, req *connect.Request[v1.RegisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	connectErr := connect.NewError(connect.CodeInternal, errors.New("API_ERROR"))
-	h, err := helper.VixNewHost()
-	if err != nil {
-		return nil, helper.WrapConnectErrorDetail(connectErr, &v1.ErrDetail{
-			Message: err.Error(),
-			Module:  v1.ErrDetail_VIX,
-		})
-	}
-	defer func(hostConn *govix.Host) {
-		err := helper.VixFreeHost(hostConn)
-		if err != nil {
-			log.Printf("helper.VixFreeHost Err: %v\n", err)
-		}
-	}(h)
-
-	err = h.RegisterVM(req.Msg.VmxFilePath)
-	if err != nil {
-		return nil, helper.WrapConnectErrorDetail(connectErr, &v1.ErrDetail{
-			Message: err.Error(),
-			Module:  v1.ErrDetail_VIX,
-		})
-	}
-
-	return connect.NewResponse(&v1.GenericResponse{}), nil
-}
-
-// UnregisterVM 移除虚拟机
-func (s *ApiServer) UnregisterVM(ctx context.Context, req *connect.Request[v1.UnregisterVMRequest]) (*connect.Response[v1.GenericResponse], error) {
-	connectErr := connect.NewError(connect.CodeInternal, errors.New("API_ERROR"))
-	h, err := helper.VixNewHost()
-	if err != nil {
-		return nil, helper.WrapConnectErrorDetail(connectErr, &v1.ErrDetail{
-			Message: err.Error(),
-			Module:  v1.ErrDetail_VIX,
-		})
-	}
-	defer func(hostConn *govix.Host) {
-		err := helper.VixFreeHost(hostConn)
-		if err != nil {
-			log.Printf("helper.VixFreeHost Err: %v\n", err)
-		}
-	}(h)
-
-	err = h.UnregisterVM(req.Msg.VmxFilePath)
-	if err != nil {
-		return nil, helper.WrapConnectErrorDetail(connectErr, &v1.ErrDetail{
-			Message: err.Error(),
-			Module:  v1.ErrDetail_VIX,
-		})
-	}
-
-	return connect.NewResponse(&v1.GenericResponse{}), nil
-}
-
 // CloneVM 克隆虚拟机
 func (s *ApiServer) CloneVM(ctx context.Context, req *connect.Request[v1.CloneVMRequest]) (*connect.Response[v1.GenericResponse], error) {
 	connectErr := connect.NewError(connect.CodeInternal, errors.New("API_ERROR"))
