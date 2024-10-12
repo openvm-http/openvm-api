@@ -69,9 +69,8 @@ func main() {
 		log.Printf("Security Warning: ACCESS_TOKEN has not been set!\n")
 	}
 	addr := "localhost:8080"
-	if port := os.Getenv("PORT"); port != "" {
-		addr = ":" + port
-		log.Printf("Security Warning: Non-local network!\n")
+	if addrEnv := os.Getenv("ADDR"); addrEnv != "" {
+		addr = addrEnv
 	}
 
 	interceptors := connect.WithInterceptors(interceptor.NewAuthInterceptor())
