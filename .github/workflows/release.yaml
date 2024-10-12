@@ -41,9 +41,8 @@ jobs:
       - name: 'Copy RUNTIME'
         run: |
           # prebuilt/start.sh
-          echo '#!/bin/bash' > prebuilt/start.sh
-          echo 'SCRIPT_DIR=$(dirname "$(readlink -f "$0")")' >> prebuilt/start.sh
-          echo 'LD_LIBRARY_PATH=$SCRIPT_DIR $SCRIPT_DIR/openvm-api' >> prebuilt/start.sh
+          echo "#!/bin/bash" > prebuilt/start.sh
+          echo "LD_LIBRARY_PATH=\$(pwd) \$(pwd)/openvm-api" >> prebuilt/start.sh
           chmod +x prebuilt/start.sh
           # prebuilt/libvixAllProducts.so
           cp $(pwd)/vm_libvix/libs/linux64/libvixAllProducts.so prebuilt/
@@ -114,17 +113,16 @@ jobs:
 
       - name: Compress subdirectories
         run: |
-          export VERSION=${GITHUB_REF#refs/tags/v}
           cd ./openvm-api_prebuilt_win_amd64/
-          zip -q -r openvm-api_v$VERSION_prebuilt_win_amd64.zip *
+          zip -q -r openvm-api_prebuilt_win_amd64.zip *
           cd ..
           cd ./openvm-api_prebuilt_linux_amd64/
-          zip -q -r openvm-api_v$VERSION_prebuilt_linux_amd64 *
+          zip -q -r openvm-api_prebuilt_linux_amd64 *
           cd ..
-          rm ./openvm-api_v$VERSION_prebuilt_linux_amd64.zip -rf
-          rm ./openvm-api_v$VERSION_prebuilt_win_amd64.zip -rf
-          mv ./openvm-api_prebuilt_linux_amd64/openvm-api_v$VERSION_prebuilt_linux_amd64.zip ./
-          mv ./openvm-api_prebuilt_win_amd64/openvm-api_v$VERSION_prebuilt_win_amd64.zip ./
+          rm ./openvm-api_prebuilt_linux_amd64.zip -rf
+          rm ./openvm-api_prebuilt_win_amd64.zip -rf
+          mv ./openvm-api_prebuilt_linux_amd64/openvm-api_prebuilt_linux_amd64.zip ./
+          mv ./openvm-api_prebuilt_win_amd64/openvm-api_prebuilt_win_amd64.zip ./
       - name: Extract version from tag
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
@@ -139,5 +137,5 @@ jobs:
           token: ${{ github.token }}
           body_path: CHANGELOG.md
           files: |
-            openvm-api_v${{ env.VERSION }}_prebuilt_linux_amd64.zip
-            openvm-api_v${{ env.VERSION }}_prebuilt_win_amd64.zip
+            openvm-api_prebuilt_linux_amd64.zip
+            openvm-api_prebuilt_win_amd64.zip
