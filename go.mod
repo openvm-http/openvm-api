@@ -1,8 +1,6 @@
 module github.com/openvm-http/openvm-api
 
-go 1.20.14
-
-toolchain go1.20
+go 1.20
 
 require (
 	connectrpc.com/connect v1.16.2
