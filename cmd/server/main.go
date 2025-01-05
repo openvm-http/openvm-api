@@ -94,18 +94,34 @@ func main() {
 		Handler: h2c.NewHandler(httpServerMux, &http2.Server{}),
 	}
 	log.Printf("HTTP server listening on %s\n", addr)
-	signals := make(chan os.Signal, 1)
-	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 	go func() {
 		if err := srv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
 			log.Fatalf("HTTP listen and serve: %v\n", err)
 		}
 	}()
+	// grpc
+	apiSrv := &http.Server{
+		Addr:    addr,
+		Handler: h2c.NewHandler(api, &http2.Server{}),
+	}
+	log.Printf("apiSrv server listening on %s\n", addr)
+	go func() {
+		if err := apiSrv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
+			log.Fatalf("apiSrv listen and serve: %v\n", err)
+		}
+	}()
+	signals := make(chan os.Signal, 1)
+	signal.Notify(signals, os.Interrupt, syscall.SIGTERM)
 
 	<-signals
 	ctx, cancel := context.WithTimeout(context.Background(), time.Second)
 	defer cancel()
 	if err := srv.Shutdown(ctx); err != nil {
 		log.Fatalf("HTTP shutdown: %v\n", err)
+	}
+	ctx2, cancel2 := context.WithTimeout(context.Background(), time.Second)
+	defer cancel2()
+	if err := apiSrv.Shutdown(ctx2); err != nil {
+		log.Fatalf("apiSrv shutdown: %v\n", err)
 	}
 }
